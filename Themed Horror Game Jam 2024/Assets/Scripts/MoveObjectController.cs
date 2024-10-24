@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveObjectController : MonoBehaviour 
 {
-	public float reachRange = 1.8f;			
+    public float reachRange = 1.8f;			
 
 	private Animator anim;
 	private Camera fpsCam;
@@ -93,6 +93,12 @@ public class MoveObjectController : MonoBehaviour
 
 					if (Input.GetKeyUp(KeyCode.E))
 					{
+						if (this.GetComponent<ObjectDialogue>() != null)
+						{
+							Debug.Log("has object dialogoue");
+							ObjectDialogue.instance.RunDialogue(); // I added this to run dialogue if this object has it
+						}
+
 						anim.enabled = true;
 						anim.SetBool(animBoolNameNum,!isOpen);
 						msg = getGuiMsg(!isOpen);
