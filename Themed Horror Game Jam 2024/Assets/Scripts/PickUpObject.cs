@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PickUpObject : MonoBehaviour
 {
     public GameObject myHands; //reference to your hands/the position where you want your object to go
-    bool canpickup; //a bool to see if you can or cant pick up the item
+    public bool canpickup; //a bool to see if you can or cant pick up the item
     GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
-    bool hasItem; // a bool to see if you have an item in your hand
+    public bool hasItem; // a bool to see if you have an item in your hand
     // Start is called before the first frame update
+
+    private GUIStyle guiStyle;
+    private string msg;
+
+
+
+    private ObjectDialogue dialogueComponent;
+
     void Start()
     {
+        dialogueComponent = GetComponent<ObjectDialogue>();
         canpickup = false;    //setting both to false
         hasItem = false;
+        setupGui();
     }
 
     // Update is called once per frame
@@ -20,19 +32,28 @@ public class PickUpObject : MonoBehaviour
     {
         if (canpickup == true) // if you enter thecollider of the objecct
         {
+            msg = getGuiMsg(hasItem);
             if (Input.GetKeyDown(KeyCode.Q))  // can be e or any key
             {
+                if (dialogueComponent != null)
+                {
+                    dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it
+                }
+
                 ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
                 ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
                 ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands
                 hasItem = true;
+                msg = getGuiMsg(!hasItem);
             }
         }
+        
         if (Input.GetKeyDown(KeyCode.R) && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
         {
             ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = false; // make the rigidbody work again
 
             ObjectIwantToPickUp.transform.parent = null; // make the object no be a child of the hands
+            hasItem = false;
         }
     }
      void OnTriggerEnter(Collider other) // to see when the player enters the collider
@@ -49,6 +70,41 @@ public class PickUpObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canpickup = false; //when you leave the collider set the canpickup bool to false
+           
+        }
+    }
+
+
+
+    private void setupGui()
+    {
+        guiStyle = new GUIStyle();
+        guiStyle.fontSize = 16;
+        guiStyle.fontStyle = FontStyle.Bold;
+        guiStyle.normal.textColor = Color.white;
+        msg = "Press Q to pick up object";
+    }
+
+    private string getGuiMsg(bool isInHand)
+    {
+        string rtnVal;
+        if (!isInHand)
+        {
+            rtnVal = "Press Q to pick up object";
+        }
+        else
+        {
+            rtnVal = "Press R to drop object";
+        }
+
+        return rtnVal;
+    }
+
+    void OnGUI()
+    {
+        if (hasItem || canpickup)  //show on-screen prompts to user for guide.
+        {
+            GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
         }
     }
 }
