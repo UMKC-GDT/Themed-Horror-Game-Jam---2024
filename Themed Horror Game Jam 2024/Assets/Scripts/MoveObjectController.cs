@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MoveObjectController : MonoBehaviour 
 {
+
     public float reachRange = 1.8f;			
 
 	private Animator anim;
@@ -16,13 +17,16 @@ public class MoveObjectController : MonoBehaviour
 	private GUIStyle guiStyle;
 	private string msg;
 
-	private int rayLayerMask; 
+	private int rayLayerMask;
+	private ObjectDialogue dialogueComponent;
 
 
-	void Start()
+    void Start()
 	{
-		//Initialize moveDrawController if script is enabled.
-		player = GameObject.FindGameObjectWithTag("Player");
+
+		dialogueComponent = GetComponent<ObjectDialogue>();
+        //Initialize moveDrawController if script is enabled.
+        player = GameObject.FindGameObjectWithTag("Player");
 
 		fpsCam = Camera.main;
 		if (fpsCam == null)	//a reference to Camera is required for rayasts
@@ -93,10 +97,11 @@ public class MoveObjectController : MonoBehaviour
 
 					if (Input.GetKeyUp(KeyCode.E))
 					{
-						if (this.GetComponent<ObjectDialogue>() != null)
+						if (dialogueComponent != null)
 						{
-							Debug.Log("has object dialogoue");
-							ObjectDialogue.instance.RunDialogue(); // I added this to run dialogue if this object has it
+
+
+                            dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it
 						}
 
 						anim.enabled = true;

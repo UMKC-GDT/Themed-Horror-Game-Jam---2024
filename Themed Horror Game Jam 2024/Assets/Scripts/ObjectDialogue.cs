@@ -7,12 +7,6 @@ using TMPro;
 public class ObjectDialogue : MonoBehaviour
 {
 
-    public static ObjectDialogue instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
@@ -40,6 +34,7 @@ public class ObjectDialogue : MonoBehaviour
 
         if (runDialogue)
         {
+
             if (interacted)
             {
                 RemoveText();
