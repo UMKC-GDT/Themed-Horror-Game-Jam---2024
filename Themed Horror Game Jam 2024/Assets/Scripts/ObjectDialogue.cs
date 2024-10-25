@@ -17,6 +17,7 @@ public class ObjectDialogue : MonoBehaviour
     private bool runDialogue;
     private bool interacted;
     public bool repeatDialogue;
+    public bool colliderTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -110,10 +111,10 @@ public class ObjectDialogue : MonoBehaviour
     }
 
     //to make dialogue trigger on collision
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && colliderTrigger)
         {
             runDialogue = true;
         }
@@ -121,11 +122,16 @@ public class ObjectDialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&& colliderTrigger)
         {
             runDialogue = false;
+
+
+            interacted = !repeatDialogue;
+            index = 0;
+
             RemoveText();
         }
     }
-    */
+    
 }
