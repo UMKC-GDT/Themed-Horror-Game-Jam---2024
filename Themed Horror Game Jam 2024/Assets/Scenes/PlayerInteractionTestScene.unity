@@ -1618,9 +1618,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3682650676044280610, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 76.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682650676044280610, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 135.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682650676044280610, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0017243
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682650676044280610, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -236.26
+      objectReference: {fileID: 0}
     - target: {fileID: 4346679456478275809, guid: 81446e43015b5c849a29e80985326c16, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247708708996572686, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 985.4927
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247708708996572686, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 103.5361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247708708996572686, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247708708996572686, guid: 81446e43015b5c849a29e80985326c16, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -241.0534
       objectReference: {fileID: 0}
     - target: {fileID: 8094238551251695521, guid: 81446e43015b5c849a29e80985326c16, type: 3}
       propertyPath: m_Pivot.x
