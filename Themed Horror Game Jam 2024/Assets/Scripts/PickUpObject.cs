@@ -54,6 +54,7 @@ public class PickUpObject : MonoBehaviour
 
             ObjectIwantToPickUp.transform.parent = null; // make the object no be a child of the hands
             hasItem = false;
+            msg = getGuiMsg(hasItem);
         }
     }
      void OnTriggerEnter(Collider other) // to see when the player enters the collider
