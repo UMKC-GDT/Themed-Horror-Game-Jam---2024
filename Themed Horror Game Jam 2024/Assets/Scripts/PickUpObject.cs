@@ -44,7 +44,7 @@ public class PickUpObject : MonoBehaviour
                 ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
                 ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands
                 hasItem = true;
-                msg = getGuiMsg(!hasItem);
+                msg = getGuiMsg(hasItem);
             }
         }
         
