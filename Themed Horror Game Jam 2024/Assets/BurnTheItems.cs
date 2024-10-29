@@ -1,12 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class BurnTheItems : MonoBehaviour
 {
     public string[] objectsToBurn; //write in the specific name of the object
     private ParticleSystem fire;
-    
+    public UnityEvent onItemBurned;
+
     void Start()
     {
         fire = GameObject.Find("FireParticles").GetComponent<ParticleSystem>();
@@ -19,6 +20,7 @@ public class BurnTheItems : MonoBehaviour
             if(other.gameObject.name == objectsToBurn[i] && !other.gameObject.GetComponent<PickUpObject>().hasItem)
             {
                 //Set your event or whatever you want here
+                onItemBurned.Invoke();
                 Destroy(other.gameObject);
                 var main = fire.main;
                 main.startSpeed = 3f;
