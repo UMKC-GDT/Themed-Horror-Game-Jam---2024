@@ -14,6 +14,13 @@ public class AudioClipPitchRandomizer : MonoBehaviour
 
     public void PlayClip()
     {
+        if(lowPitch > highPitch)
+        {
+            float temp = lowPitch;
+            lowPitch = highPitch;
+            highPitch = temp;            
+        }
+
         if(audioSource == null)
             audioSource = GetComponent<AudioSource>();
 
