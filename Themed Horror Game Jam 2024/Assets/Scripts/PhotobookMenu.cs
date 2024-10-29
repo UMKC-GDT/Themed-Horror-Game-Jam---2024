@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PhotobookMenu : MonoBehaviour
@@ -12,6 +13,8 @@ public class PhotobookMenu : MonoBehaviour
     public GameObject photoPrefab;
     public GameObject pagePrefab;
     public GameObject photobookMenuUI;
+    public GameObject buttonLeft;
+    public GameObject buttonRight;
     public static List<string> photosCollected = new List<string> ();
     private static int pageNum;
     public static int totalPages = 5;
@@ -25,57 +28,7 @@ public class PhotobookMenu : MonoBehaviour
     public static float pageHeight = 350;
     public static float photoWidth = 250;
     public static float photoHeight = 250;
-        private float GetParityXCoordinate(int pageNum){
-        if (pageNum % 2 == 1){
-            return -pageXCoordinate;
-        } else {
-            return pageXCoordinate;
-        }
-    }
-    public void PageFlipButton(){
-        string buttonName = EventSystem.current.currentSelectedGameObject.name;
 
-        if (buttonName.Contains("Right")){
-            pageFlipDirection = "Right";
-            Debug.Log("Right Button Pressed");
-        } else if (buttonName.Contains("Left")){
-            pageFlipDirection = "Left";
-            Debug.Log("Left Button Pressed");
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(openPhotobookKey)){
-            if (photobookMenuUI.activeInHierarchy){
-                ClosePhotobook();
-            } else {
-                OpenPhotobook();
-            }
-        }
-
-        if (photobookMenuUI.activeInHierarchy){
-            if (Input.GetKeyDown(flipLeft) || pageFlipDirection == "Left"){
-                PageFlip("Left");
-            } else if (Input.GetKeyDown(flipRight) || pageFlipDirection == "Right"){
-                PageFlip("Right");
-            }
-            pageFlipDirection = "None";
-        }
-    }
-
-    public GameObject CreatePage(GameObject Pages, int pageNum){
-        float pageParity = GetParityXCoordinate(pageNum);
-        GameObject page = Instantiate(pagePrefab, Pages.transform);
-        RectTransform pageRectTransform = page.GetComponent<RectTransform>();
-
-        pageRectTransform.anchoredPosition = new Vector2(pageParity, 0);
-        pageRectTransform.sizeDelta = new Vector2(pageWidth, pageHeight);
-        pageRectTransform.name = "Page_" + (pageNum);
-
-        return page;
-    }
     void CreatePhoto(GameObject page, int pageNum){
         GameObject photo = Instantiate(photoPrefab, page.transform);
 
@@ -113,8 +66,20 @@ public class PhotobookMenu : MonoBehaviour
         }
     }
 
+    void PageFlipButton(){
+        string buttonName = EventSystem.current.currentSelectedGameObject.name;
+
+        if (buttonName.Contains("Right")){
+            pageFlipDirection = "Right";
+        } else if (buttonName.Contains("Left")){
+            pageFlipDirection = "Left";
+        }
+    }
+
     void PageFlip(string Direction){
         GameObject Pages = GameObject.Find("Canvas/Photobook/Pages");
+        buttonLeft.SetActive(true);
+        buttonRight.SetActive(true);
 
         for (int page = 0; page < Pages.transform.childCount ; page++) {
             Pages.transform.GetChild(page).gameObject.SetActive(false);
@@ -124,6 +89,12 @@ public class PhotobookMenu : MonoBehaviour
             pageSet--;
         } else if (Direction == "Right" && pageSet != totalSets){
             pageSet++;
+        }
+
+        if (pageSet == 1){
+            buttonLeft.SetActive(false);
+        } else if (pageSet == totalSets){
+            buttonRight.SetActive(false);
         }
 
         CreatePageSet(Pages, pageSet);
@@ -138,6 +109,47 @@ public class PhotobookMenu : MonoBehaviour
         // photosCollected.Add("Photo_1"); // Debug
         // photosCollected.Add("Photo_3"); // Debug
         PageFlip("None");
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(openPhotobookKey)){
+            if (photobookMenuUI.activeInHierarchy){
+                ClosePhotobook();
+            } else {
+                OpenPhotobook();
+            }
+        }
+
+        if (photobookMenuUI.activeInHierarchy){
+            if (Input.GetKeyDown(flipLeft) || pageFlipDirection == "Left"){
+                PageFlip("Left");
+            } else if (Input.GetKeyDown(flipRight) || pageFlipDirection == "Right"){
+                PageFlip("Right");
+            }
+            pageFlipDirection = "None";
+        }
+    }
+
+    private float GetParityXCoordinate(int pageNum){
+        if (pageNum % 2 == 1){
+            return -pageXCoordinate;
+        } else {
+            return pageXCoordinate;
+        }
+    }
+    
+    private GameObject CreatePage(GameObject Pages, int pageNum){
+        float pageParity = GetParityXCoordinate(pageNum);
+        GameObject Page = Instantiate(pagePrefab, Pages.transform);
+
+        RectTransform pageRectTransform = Page.GetComponent<RectTransform>();
+
+        pageRectTransform.anchoredPosition = new Vector2(pageParity, 0);
+        pageRectTransform.sizeDelta = new Vector2(pageWidth, pageHeight);
+        pageRectTransform.name = "Page_" + (pageNum);
+
+        return Page;
     }
 }
 
