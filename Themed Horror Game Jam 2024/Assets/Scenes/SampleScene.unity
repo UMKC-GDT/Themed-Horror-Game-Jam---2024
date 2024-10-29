@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -29456,6 +29456,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 16.923601
       objectReference: {fileID: 0}
+    - target: {fileID: 517762589415021691, guid: 62220984fc37bcd4c8aa8ee2395b34b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 768566487565622544, guid: 62220984fc37bcd4c8aa8ee2395b34b7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 19.24
@@ -29596,6 +29600,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 98da67f453b4e4d76914fdfd578431fe, type: 2}
+    - target: {fileID: 7570942305491531584, guid: 62220984fc37bcd4c8aa8ee2395b34b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.99
+      objectReference: {fileID: 0}
     - target: {fileID: 7692398308918929482, guid: 62220984fc37bcd4c8aa8ee2395b34b7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
