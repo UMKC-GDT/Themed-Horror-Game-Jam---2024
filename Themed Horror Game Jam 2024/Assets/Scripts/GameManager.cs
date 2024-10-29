@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine.Events;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,11 +14,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        InitializeGameManager();
+        SpawnCursedObject();
+    }
+
+    public void InitializeGameManager()
+    {
         cursedObjectsDestroyed = 0;
         currentCursedObject = null;
         if(destroyedCursedObjects == null)
             destroyedCursedObjects = new();
-        SpawnCursedObject();
     }
 
     public void SpawnCursedObject()
