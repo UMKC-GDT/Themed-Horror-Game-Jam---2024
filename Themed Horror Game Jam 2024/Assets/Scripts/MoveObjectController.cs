@@ -4,7 +4,8 @@ using System.Collections;
 public class MoveObjectController : MonoBehaviour 
 {
 
-    public float reachRange = 1.8f;			
+    public float reachRange = 1.8f;
+	public bool doorLocked;
 
 	private Animator anim;
 	private Camera fpsCam;
@@ -67,56 +68,37 @@ public class MoveObjectController : MonoBehaviour
 	}
 
 
-
 	void Update()
 	{		
 		if (playerEntered)
-		{	
-
+		{
 			//center point of viewport in World space.
 			Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0f));
-			RaycastHit hit;
-
-			//if raycast hits a collider on the rayLayerMask
-			if (Physics.Raycast(rayOrigin,fpsCam.transform.forward, out hit,reachRange,rayLayerMask))
-			{
-				MoveableObject moveableObject = null;
-				//is the object of the collider player is looking at the same as me?
-				if (!isEqualToParent(hit.collider, out moveableObject))
-				{	//it's not so return;
-					return;
+			     
+			showInteractMsg = true;
+				
+			string animBoolNameNum = animBoolName + "1";// moveableObject.objectNumber.ToString();
+	
+			bool isOpen = anim.GetBool(animBoolNameNum);    //need current state for message.
+				
+			msg = getGuiMsg(isOpen);
+	
+			if (Input.GetKeyUp(KeyCode.E))	
+			{		
+				if (dialogueComponent != null)		
+				{      
+					dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it	
 				}
-					
-				if (moveableObject != null)		//hit object must have MoveableDraw script attached
+				
+				if (!doorLocked)
 				{
-					showInteractMsg = true;
-					string animBoolNameNum = animBoolName + moveableObject.objectNumber.ToString();
+                    anim.enabled = true;
+                    anim.SetBool(animBoolNameNum, !isOpen);
+                    msg = getGuiMsg(!isOpen);
 
-					bool isOpen = anim.GetBool(animBoolNameNum);	//need current state for message.
-					msg = getGuiMsg(isOpen);
-
-					if (Input.GetKeyUp(KeyCode.E))
-					{
-						if (dialogueComponent != null)
-						{
-
-
-                            dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it
-						}
-
-						anim.enabled = true;
-						anim.SetBool(animBoolNameNum,!isOpen);
-						msg = getGuiMsg(!isOpen);
-					}
-
-				}
-			}
-			else
-			{
-				showInteractMsg = false;
+                }	
 			}
 		}
-
 	}
 
 	//is current gameObject equal to the gameObject of other.  check its parents
@@ -150,9 +132,7 @@ public class MoveObjectController : MonoBehaviour
 		{
 			Debug.Log(e.Message);
 		}
-			
 		return rtnVal;
-
 	}
 		
 
@@ -178,7 +158,6 @@ public class MoveObjectController : MonoBehaviour
 		{
 			rtnVal = "Press E to Open";
 		}
-
 		return rtnVal;
 	}
 
