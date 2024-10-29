@@ -1,13 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class ObjectDialogue : MonoBehaviour
 {
-
-
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     private int index = 0;
@@ -19,7 +15,6 @@ public class ObjectDialogue : MonoBehaviour
     public bool repeatDialogue;
     public bool colliderTrigger;
 
-    // Start is called before the first frame update
     void Start()
     {
         interacted = false;
@@ -27,50 +22,44 @@ public class ObjectDialogue : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (runDialogue == false)
+            return;
 
-        
-
-        if (runDialogue)
+        if (interacted)
         {
-
-            if (interacted)
+            RemoveText();
+        }
+        else
+        {
+            if(!dialoguePanel.activeInHierarchy)
             {
-                RemoveText();
+                dialoguePanel.SetActive(true);
+                StartCoroutine(Typing());
             }
-            else
-            {
-                if(!dialoguePanel.activeInHierarchy)
-                {
-                    dialoguePanel.SetActive(true);
-                    StartCoroutine(Typing());
-                }
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (dialogueText.text == dialogue[index])
-                    {
-                        NextLine();
-                    }
-                    else
-                    {
-                        StopAllCoroutines();
-                        dialogueText.text = dialogue[index];
-                        
-                    }
-                }
-            }
-            if (index >= dialogue.Length -1 && dialoguePanel.activeInHierarchy)
+            if (Input.GetMouseButtonDown(0))
             {
-                //if this is a peice of dialogue that should be repeated then interact will remain false 
-                interacted = !repeatDialogue;
-                index = 0;
-                RemoveText();
+                if (dialogueText.text == dialogue[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    dialogueText.text = dialogue[index];
+                    
+                }
             }
         }
-        
+        if (index >= dialogue.Length -1 && dialoguePanel.activeInHierarchy)
+        {
+            //if this is a peice of dialogue that should be repeated then interact will remain false 
+            interacted = !repeatDialogue;
+            index = 0;
+            RemoveText();
+        }
     }
 
     //this gets called in the move object controller script
@@ -110,8 +99,7 @@ public class ObjectDialogue : MonoBehaviour
         }
     }
 
-    //to make dialogue trigger on collision
-    
+    //to make dialogue trigger on overlap
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && colliderTrigger)
@@ -125,7 +113,6 @@ public class ObjectDialogue : MonoBehaviour
         if (other.CompareTag("Player")&& colliderTrigger)
         {
             runDialogue = false;
-
 
             interacted = !repeatDialogue;
             index = 0;
