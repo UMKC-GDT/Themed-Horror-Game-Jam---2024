@@ -6,16 +6,10 @@ public class BurnTheItems : MonoBehaviour
 {
     public string[] objectsToBurn; //write in the specific name of the object
     private ParticleSystem fire;
-    // Start is called before the first frame update
+    
     void Start()
     {
         fire = GameObject.Find("FireParticles").GetComponent<ParticleSystem>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerStay(Collider other)
