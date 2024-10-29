@@ -14543,6 +14543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 366342808}
     m_Modifications:
+    - target: {fileID: 2038691820954348137, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72128334e9f760c4b831b070491106df, type: 2}
     - target: {fileID: 2075768885920462019, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: m_Name
       value: Fire
@@ -14586,6 +14590,22 @@ PrefabInstance:
     - target: {fileID: 6078844535553331009, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885097627261502283, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885097627261502283, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885097627261502283, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885097627261502283, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
