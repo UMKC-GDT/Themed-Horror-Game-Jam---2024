@@ -4,7 +4,8 @@ using System.Collections;
 public class MoveObjectController : MonoBehaviour 
 {
 
-    public float reachRange = 1.8f;			
+    public float reachRange = 1.8f;
+	public bool doorLocked;
 
 	private Animator anim;
 	private Camera fpsCam;
@@ -88,10 +89,14 @@ public class MoveObjectController : MonoBehaviour
 				{      
 					dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it	
 				}
-	
-				anim.enabled = true;	
-				anim.SetBool(animBoolNameNum,!isOpen);
-				msg = getGuiMsg(!isOpen);	
+				
+				if (!doorLocked)
+				{
+                    anim.enabled = true;
+                    anim.SetBool(animBoolNameNum, !isOpen);
+                    msg = getGuiMsg(!isOpen);
+
+                }	
 			}
 		}
 	}
