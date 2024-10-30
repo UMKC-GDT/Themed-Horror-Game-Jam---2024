@@ -15,13 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDrag;
 
-    public float jumpForce;
+   /* public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
 
     [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode jumpKey = KeyCode.Space;*/
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.freezeRotation = true;
 
-        readyToJump = true;
+        //readyToJump = true;
     }
 
     private void Update()
@@ -82,12 +82,12 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        /*if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
-        }
+        }*/
     }
 
     private void MovePlayer(Vector3 groundNormal)
@@ -120,7 +120,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rb.AddForce(projectedMoveDir * moveSpeed * airMultiplier, ForceMode.Acceleration);
+            //rb.AddForce(projectedMoveDir * moveSpeed * airMultiplier, ForceMode.Acceleration);
+            rb.AddForce(projectedMoveDir * moveSpeed * 1, ForceMode.Acceleration);
         }
     }
 
@@ -140,12 +141,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        //rb.AddForce(transform.up * jumpForce, ForceMode.Impulse)
+        rb.AddForce(transform.up * 1, ForceMode.Impulse);
     }
 
     private void ResetJump()
     {
-        readyToJump = true;
+        //readyToJump = true;
     }
 
     public void setFire()
