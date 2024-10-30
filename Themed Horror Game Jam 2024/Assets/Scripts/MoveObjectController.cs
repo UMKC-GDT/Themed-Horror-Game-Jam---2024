@@ -21,10 +21,12 @@ public class MoveObjectController : MonoBehaviour
 	private int rayLayerMask;
 	private ObjectDialogue dialogueComponent;
 
+	private  AudioSource audio;
+
 
     void Start()
 	{
-
+		audio = GetComponent<AudioSource>();
 		dialogueComponent = GetComponent<ObjectDialogue>();
         //Initialize moveDrawController if script is enabled.
         player = GameObject.FindGameObjectWithTag("Player");
@@ -92,6 +94,10 @@ public class MoveObjectController : MonoBehaviour
 				
 				if (!doorLocked)
 				{
+					if (audio != null)
+					{
+						audio.Play();
+					}
                     anim.enabled = true;
                     anim.SetBool(animBoolNameNum, !isOpen);
                     msg = getGuiMsg(!isOpen);
