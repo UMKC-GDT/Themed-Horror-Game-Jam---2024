@@ -113,7 +113,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(projectedMoveDir * moveSpeed * airMultiplier, ForceMode.Acceleration);
         }
-        Debug.Log(slopeMultiplier);
     }
 
 

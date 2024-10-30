@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public class BurnTheItems : MonoBehaviour
 {
-    public List<GameObject> objectsToBurn; //write in the specific name of the object
+    public List<GameObject> objectsToBurn, wrongItemsToBurn;
     private ParticleSystem fire;
-    public UnityEvent onItemBurned;
+    public UnityEvent onItemBurned, onWrongItemBurned;
 
     void Start()
     {
@@ -16,20 +16,26 @@ public class BurnTheItems : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        for(int i = 0; i < objectsToBurn.Count; i++)
+        if(other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
-            if(other.gameObject == objectsToBurn[i] && !other.gameObject.GetComponent<PickUpObject>().hasItem)
-            {
-                //Set your event or whatever you want here
-                onItemBurned.Invoke();
-                Destroy(other.gameObject);
-                var main = fire.main;
-                main.startSpeed = 3f;
-                StartCoroutine(normalFire());
-                break;
-            }
+            //Set your event or whatever you want here
+            onItemBurned.Invoke();
+            Debug.Log("Correct");
+            Destroy(other.gameObject);
+            var main = fire.main;
+            main.startSpeed = 3f;
+            StartCoroutine(normalFire());
         }
-
+        if(other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
+        {
+            //Set your event or whatever you want here
+            onWrongItemBurned.Invoke();
+            Debug.Log("Incorrect");
+            Destroy(other.gameObject);
+            var main = fire.main;
+            main.startSpeed = 3f;
+            StartCoroutine(normalFire());
+        }
     }
 
     IEnumerator normalFire()
@@ -40,6 +46,5 @@ public class BurnTheItems : MonoBehaviour
         var main = fire.main;
         main.startSpeed = 1f;
         Debug.Log("Fire Check Complete");
-
     }
 }

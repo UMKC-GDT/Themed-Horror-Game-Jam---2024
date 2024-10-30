@@ -15657,20 +15657,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.size
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[0]
       value: 
-      objectReference: {fileID: 2133437614481591202}
+      objectReference: {fileID: 2545395271472213974}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[1]
       value: 
-      objectReference: {fileID: 4117706944319632610}
+      objectReference: {fileID: 6523100707534869547}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[2]
       value: 
-      objectReference: {fileID: 2545395271472213974}
+      objectReference: {fileID: 4044325141638924387}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[3]
       value: 
@@ -15678,19 +15678,67 @@ PrefabInstance:
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[4]
       value: 
-      objectReference: {fileID: 4284767407069201827}
+      objectReference: {fileID: 4117706944319632610}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[5]
       value: 
-      objectReference: {fileID: 4044325141638924387}
+      objectReference: {fileID: 2216872451285317979}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[6]
       value: 
-      objectReference: {fileID: 6523100707534869547}
+      objectReference: {fileID: 4284767407069201827}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[7]
       value: 
+      objectReference: {fileID: 2133437614481591202}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: wrongItemsToBurn.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: wrongItemsToBurn.Array.data[0]
+      value: 
+      objectReference: {fileID: 4117706944319632610}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: wrongItemsToBurn.Array.data[1]
+      value: 
       objectReference: {fileID: 2216872451285317979}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: wrongItemsToBurn.Array.data[2]
+      value: 
+      objectReference: {fileID: 4284767407069201827}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: wrongItemsToBurn.Array.data[3]
+      value: 
+      objectReference: {fileID: 2133437614481591202}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 663515222}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveAMinute
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClockController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
+      propertyPath: onWrongItemBurned.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6078844535553331009, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -46483,7 +46531,7 @@ GameObject:
   - component: {fileID: 2753563060786448139}
   m_Layer: 0
   m_Name: SpawnerSpichki
-  m_TagString: Untagged
+  m_TagString: Burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46919,7 +46967,7 @@ GameObject:
   - component: {fileID: 7246048403981970151}
   m_Layer: 0
   m_Name: SpawnerCigs
-  m_TagString: Untagged
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46941,7 +46989,7 @@ GameObject:
   - component: {fileID: 3268167233415969326}
   m_Layer: 0
   m_Name: SpawnerVase2
-  m_TagString: Untagged
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46959,14 +47007,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 526846003179963412}
-  - {fileID: 7299790788160506426}
   - {fileID: 94972704131569693}
   - {fileID: 3317700257592067625}
-  - {fileID: 8572444207258616471}
   - {fileID: 2475639172264329838}
   - {fileID: 7879147120658802535}
+  - {fileID: 7299790788160506426}
   - {fileID: 1958909472567515900}
+  - {fileID: 8572444207258616471}
+  - {fileID: 526846003179963412}
   m_Father: {fileID: 2731270028562170745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2237398228719860263
@@ -47085,7 +47133,7 @@ GameObject:
   - component: {fileID: 5673556732107475933}
   m_Layer: 0
   m_Name: SpawnerVase1
-  m_TagString: Untagged
+  m_TagString: Burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47484,7 +47532,7 @@ GameObject:
   - component: {fileID: 2335349746466120355}
   m_Layer: 0
   m_Name: SpawnerAshtray
-  m_TagString: Untagged
+  m_TagString: Burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47506,7 +47554,7 @@ GameObject:
   - component: {fileID: 792863125245823781}
   m_Layer: 0
   m_Name: SpawnerWaterJug
-  m_TagString: Untagged
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47549,7 +47597,7 @@ GameObject:
   - component: {fileID: 2286279591822184787}
   m_Layer: 0
   m_Name: SpawnerIron
-  m_TagString: Untagged
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47934,7 +47982,7 @@ GameObject:
   - component: {fileID: 5074734422778976925}
   m_Layer: 0
   m_Name: SpawnerBook
-  m_TagString: Untagged
+  m_TagString: Burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
