@@ -29,7 +29,7 @@ public class BurnTheItems : MonoBehaviour
         if(other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
-            onItemBurned.Invoke();
+            onWrongItemBurned.Invoke();
             Debug.Log("Incorrect");
             Destroy(other.gameObject);
             var main = fire.main;
@@ -46,6 +46,5 @@ public class BurnTheItems : MonoBehaviour
         var main = fire.main;
         main.startSpeed = 1f;
         Debug.Log("Fire Check Complete");
-
     }
 }

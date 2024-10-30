@@ -1,9 +1,7 @@
-using System.Collections.Generic;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class ClockController : MonoBehaviour
 {
@@ -35,6 +33,17 @@ public class ClockController : MonoBehaviour
             onTimeRunsOut.Invoke();
             clockText.text = "Run";
         }
+    }
+
+    public void RemoveAMinute()
+    {
+        Debug.Log(timeRemaining);
+        timeRemaining -= 60;
+        if(timeRemaining < 0)
+        {
+            timeRemaining = 0;
+        }
+        Debug.Log(timeRemaining);
     }
 
     public string secondsToText()
