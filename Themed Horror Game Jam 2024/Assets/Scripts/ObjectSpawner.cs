@@ -40,7 +40,8 @@ public class ObjectSpawner : MonoBehaviour
         };
 
         List<int> availableRooms = new List<int>();
-        for (int i = 0; i < rooms.Count; i++) availableRooms.Add(i);
+        for (int i = 0; i < rooms.Count; i++) 
+            availableRooms.Add(i);
 
         // Spawn each correct item in a unique room
         foreach (var correctPrefab in correctItemPrefabs)
