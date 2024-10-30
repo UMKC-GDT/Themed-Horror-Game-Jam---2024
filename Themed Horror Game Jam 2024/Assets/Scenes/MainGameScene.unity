@@ -12984,19 +12984,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0545425
+      value: 3.599
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6404755
+      value: 3.0327892
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.935028
+      value: -14.635
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9807107
+      value: 0.91149324
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13004,7 +13004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.19546507
+      value: -0.4113151
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13016,7 +13016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 22.544
+      value: -48.575
       objectReference: {fileID: 0}
     - target: {fileID: 2229614629905216751, guid: 423a707391f301641901995f3500baa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -37267,18 +37267,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1598048423}
     m_Modifications:
-    - target: {fileID: 1681481534528043694, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 2065094759894299801, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.448
-      objectReference: {fileID: 0}
-    - target: {fileID: 2065094759894299801, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.074
-      objectReference: {fileID: 0}
+    - target: {fileID: 810815744262605447, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 909282907329355551, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 1919499252273882577, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 2647395571811438640, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
     - target: {fileID: 2731270029025387279, guid: 03326267a0713a343850a349bf127ca0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.012
@@ -37355,30 +37359,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    - target: {fileID: 4983618528971036013, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.496
-      objectReference: {fileID: 0}
-    - target: {fileID: 4983618528971036013, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.951
-      objectReference: {fileID: 0}
-    - target: {fileID: 4983618528971036013, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.514
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539704340448166878, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.563
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539704340448166878, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539704340448166878, guid: 03326267a0713a343850a349bf127ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.411
-      objectReference: {fileID: 0}
+    - target: {fileID: 4543881464247965012, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 5069609338476807459, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 5344849614771421533, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
+    - target: {fileID: 6037495238984472030, guid: 03326267a0713a343850a349bf127ca0, type: 3}
+      propertyPath: myHands
+      value: 
+      objectReference: {fileID: 378967742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46097,8 +46093,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278240511
+  m_fontColor: {r: 1, g: 0.7676166, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -46115,8 +46111,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
