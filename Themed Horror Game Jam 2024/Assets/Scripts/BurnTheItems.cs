@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine.Events;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BurnTheItems : MonoBehaviour
 {
-    public string[] objectsToBurn; //write in the specific name of the object
+    public List<GameObject> objectsToBurn; //write in the specific name of the object
     private ParticleSystem fire;
     public UnityEvent onItemBurned;
 
@@ -15,9 +16,9 @@ public class BurnTheItems : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        for(int i = 0; i < objectsToBurn.Length; i++)
+        for(int i = 0; i < objectsToBurn.Count; i++)
         {
-            if(other.gameObject.name == objectsToBurn[i] && !other.gameObject.GetComponent<PickUpObject>().hasItem)
+            if(other.gameObject == objectsToBurn[i] && !other.gameObject.GetComponent<PickUpObject>().hasItem)
             {
                 //Set your event or whatever you want here
                 onItemBurned.Invoke();
