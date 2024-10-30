@@ -3020,6 +3020,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
+--- !u!1 &136834243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7936391296876225909, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
+  m_PrefabInstance: {fileID: 136834242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139092604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15959,7 +15964,7 @@ PrefabInstance:
       objectReference: {fileID: 1814468811}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[0]
@@ -15980,7 +15985,7 @@ PrefabInstance:
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[4]
       value: 
-      objectReference: {fileID: 4117706944319632610}
+      objectReference: {fileID: 136834243}
     - target: {fileID: 3731139277484768089, guid: 4678cc690bd7cab42aa7ac9da3f962eb, type: 3}
       propertyPath: objectsToBurn.Array.data[5]
       value: 
