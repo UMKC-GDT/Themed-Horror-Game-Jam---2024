@@ -8,6 +8,7 @@ public class BurnTheItems : MonoBehaviour
     public List<GameObject> objectsToBurn, wrongItemsToBurn;
     public ParticleSystem fire, goodFire;
     public UnityEvent onItemBurned, onWrongItemBurned;
+    public AudioSource audio;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class BurnTheItems : MonoBehaviour
         if(other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
+            audio.Play();
             onItemBurned.Invoke();
             Debug.Log("Correct");
             Destroy(other.gameObject);
@@ -31,6 +33,7 @@ public class BurnTheItems : MonoBehaviour
         if(other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
+            audio.Play();
             onWrongItemBurned.Invoke();
             Debug.Log("Incorrect");
             Destroy(other.gameObject);
