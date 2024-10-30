@@ -52,7 +52,7 @@ public class PickUpObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
         {
             ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = false; // make the rigidbody work again
-            ObjectIwantToPickUp.GetComponent<Collider>().enabled = false;
+            ObjectIwantToPickUp.GetComponent<Collider>().enabled = true;
             ObjectIwantToPickUp.transform.parent = null; // make the object no be a child of the hands
             hasItem = false;
             msg = getGuiMsg(hasItem);
