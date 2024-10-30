@@ -17,7 +17,7 @@ public class BurnTheItems : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
+        if (other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
             audio.Play();
@@ -30,7 +30,7 @@ public class BurnTheItems : MonoBehaviour
             main.startSpeed = 3f;
             StartCoroutine(normalFire());
         }
-        if(other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
+        if (other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
             audio.Play();

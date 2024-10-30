@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 groundNormal = Vector3.zero;
 
     Rigidbody rb;
+
+    public ParticleSystem loseFire;
+    public GameObject loseFireLight;
 
     private void Start()
     {
@@ -137,5 +141,11 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    public void setFire()
+    {
+        loseFire.Play();
+        loseFireLight.gameObject.SetActive(true);
     }
 }
