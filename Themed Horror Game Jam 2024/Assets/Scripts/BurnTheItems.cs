@@ -7,6 +7,7 @@ public class BurnTheItems : MonoBehaviour
 {
     public List<GameObject> objectsToBurn, wrongItemsToBurn;
     private ParticleSystem fire;
+    public Color badFire, goodFire;
     public UnityEvent onItemBurned, onWrongItemBurned;
 
     void Start()
@@ -24,6 +25,7 @@ public class BurnTheItems : MonoBehaviour
             Destroy(other.gameObject);
             var main = fire.main;
             main.startSpeed = 3f;
+            main.startColor = goodFire;
             StartCoroutine(normalFire());
         }
         if(other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
@@ -34,6 +36,7 @@ public class BurnTheItems : MonoBehaviour
             Destroy(other.gameObject);
             var main = fire.main;
             main.startSpeed = 3f;
+            main.startColor = badFire;
             StartCoroutine(normalFire());
         }
     }
@@ -45,6 +48,7 @@ public class BurnTheItems : MonoBehaviour
         yield return new WaitForSeconds(2f);
         var main = fire.main;
         main.startSpeed = 1f;
+        main.startColor = badFire;
         Debug.Log("Fire Check Complete");
     }
 }
