@@ -3952,6 +3952,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.514
       objectReference: {fileID: 0}
+    - target: {fileID: 7723933002478036745, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9110463691909687415, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.05
@@ -3972,7 +3976,8 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1261599627}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7723933002478036745, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4063254445845559711, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
     - {fileID: 8014737579940837026, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
@@ -4550,11 +4555,11 @@ PrefabInstance:
     - target: {fileID: 6694252674506190974, guid: 2ff3ce6dc26823346a1ce5a2ae613037, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 2109426616}
+      objectReference: {fileID: 1261599626}
     - target: {fileID: 6694252674506190974, guid: 2ff3ce6dc26823346a1ce5a2ae613037, type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 491714480}
+      objectReference: {fileID: 1261599627}
     - target: {fileID: 6694252674506190974, guid: 2ff3ce6dc26823346a1ce5a2ae613037, type: 3}
       propertyPath: dialogue.Array.size
       value: 3
@@ -53497,3 +53502,4 @@ SceneRoots:
   - {fileID: 1738633681}
   - {fileID: 1038032863}
   - {fileID: 136834242}
+  - {fileID: 4042499}
