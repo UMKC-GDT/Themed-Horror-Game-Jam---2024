@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+   
+    public bool lostgame = false;
+
     [Header("Movement")]
     public float moveSpeed;
 
@@ -147,5 +152,7 @@ public class PlayerMovement : MonoBehaviour
     {
         loseFire.Play();
         loseFireLight.gameObject.SetActive(true);
+        
+        lostgame = true;
     }
 }

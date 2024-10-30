@@ -13,11 +13,16 @@ public class GameManager : MonoBehaviour
 
     public GameObject winPanel;
 
+    public GameObject losePanel;
+
+    public PlayerMovement player;
+
     void Start()
     {
         cursedObjectsDestroyed = 0;
         isOver = false;
         winPanel.SetActive(false);
+        losePanel.SetActive(false);
     }
 
     private void Update()
@@ -39,6 +44,18 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+        if (player.lostgame)
+        {
+            losePanel.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene(0);
+            }
+
+        }
+
+
 
     }
 
@@ -46,4 +63,6 @@ public class GameManager : MonoBehaviour
     {
         cursedObjectsDestroyed++;
     }
+
+
 }
