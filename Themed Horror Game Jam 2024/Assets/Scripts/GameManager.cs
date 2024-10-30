@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using UnityEngine.Events;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
     public int cursedObjectsDestroyed;
     public int total = 6;
 
@@ -52,17 +49,11 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene(0);
             }
-
         }
-
-
-
     }
 
     public void DestroyedRightObject()
     {
         cursedObjectsDestroyed++;
     }
-
-
 }

@@ -11,39 +11,24 @@ public class ClockController : MonoBehaviour
 
     private void Start()
     {
-        StartTimer();
-    }
-
-    public void StartTimer()
-    {
         StartCoroutine(Countdown());
     }
 
     private IEnumerator Countdown()
     {
         yield return new WaitForSeconds(1.0f);
-        timeRemaining--;
         clockText.text = secondsToText();
         if(timeRemaining > 0)
         {
+            timeRemaining--;
             StartCoroutine(Countdown());
         }
         else 
         {
+            Debug.Log("Time Ran Out");
             onTimeRunsOut.Invoke();
             clockText.text = "Run";
         }
-    }
-
-    public void RemoveAMinute()
-    {
-        Debug.Log(timeRemaining);
-        timeRemaining -= 60;
-        if(timeRemaining < 0)
-        {
-            timeRemaining = 0;
-        }
-        Debug.Log(timeRemaining);
     }
 
     public string secondsToText()
@@ -65,5 +50,10 @@ public class ClockController : MonoBehaviour
         result += timeRemaining % 60;
 
         return result;
+    }
+
+    public void RemoveAMinute()
+    {
+        timeRemaining -= 60;
     }
 }

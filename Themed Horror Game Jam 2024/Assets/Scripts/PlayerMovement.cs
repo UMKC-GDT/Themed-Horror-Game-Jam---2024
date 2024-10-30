@@ -150,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void setFire()
     {
+        Debug.Log("Set Fire PlayerMovement");
         loseFire.Play();
         loseFireLight.gameObject.SetActive(true);
         
