@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class BurnTheItems : MonoBehaviour
 {
     public List<GameObject> objectsToBurn, wrongItemsToBurn;
-    private ParticleSystem fire;
+    public ParticleSystem fire, goodFire;
     public UnityEvent onItemBurned, onWrongItemBurned;
 
     void Start()
@@ -22,6 +22,8 @@ public class BurnTheItems : MonoBehaviour
             onItemBurned.Invoke();
             Debug.Log("Correct");
             Destroy(other.gameObject);
+            goodFire.Play();
+            fire.Stop();
             var main = fire.main;
             main.startSpeed = 3f;
             StartCoroutine(normalFire());
@@ -32,6 +34,7 @@ public class BurnTheItems : MonoBehaviour
             onWrongItemBurned.Invoke();
             Debug.Log("Incorrect");
             Destroy(other.gameObject);
+            fire.Play();
             var main = fire.main;
             main.startSpeed = 3f;
             StartCoroutine(normalFire());
@@ -43,6 +46,8 @@ public class BurnTheItems : MonoBehaviour
         Debug.Log("Fire Check");
         // suspend execution for 1 seconds
         yield return new WaitForSeconds(2f);
+        goodFire.Stop();
+        fire.Play();
         var main = fire.main;
         main.startSpeed = 1f;
         Debug.Log("Fire Check Complete");
