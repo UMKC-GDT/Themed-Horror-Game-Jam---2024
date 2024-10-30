@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class BurnTheItems : MonoBehaviour
 {
