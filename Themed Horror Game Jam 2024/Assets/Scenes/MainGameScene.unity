@@ -32776,6 +32776,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9045315776941141130, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1261599626}
+    - target: {fileID: 9045315776941141130, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1261599627}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
