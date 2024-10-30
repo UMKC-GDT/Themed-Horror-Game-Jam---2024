@@ -9,6 +9,7 @@ public class BurnTheItems : MonoBehaviour
     public ParticleSystem fire, goodFire;
     public UnityEvent onItemBurned, onWrongItemBurned;
     public AudioSource audio;
+    public GameManager game;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class BurnTheItems : MonoBehaviour
         if (other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
             //Set your event or whatever you want here
+            game.DestroyedRightObject();
             audio.Play();
             onItemBurned.Invoke();
             Debug.Log("Correct");

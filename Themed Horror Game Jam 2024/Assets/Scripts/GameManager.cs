@@ -1,78 +1,49 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public UnityEvent onCursedObjectSpawned, onCursedObjectReset, onCursedObjectDestroyed;
+    
+    public int cursedObjectsDestroyed;
+    public int total = 6;
 
-    public List<GameObject> cursedObjects, destroyedCursedObjects;
-    public GameObject currentCursedObject;
-    public int cursedObjectsDestroyed = 0;
+    public bool isOver;
 
-    public Locations cursedObjectSpawnLocations;
+    public GameObject winPanel;
 
     void Start()
     {
-        InitializeGameManager();
-        SpawnCursedObject();
-    }
-
-    public void InitializeGameManager()
-    {
         cursedObjectsDestroyed = 0;
-        currentCursedObject = null;
-        if(destroyedCursedObjects == null)
-            destroyedCursedObjects = new();
+        isOver = false;
+        winPanel.SetActive(false);
     }
 
-    public void SpawnCursedObject()
+    private void Update()
     {
-        // If they have destroyed the object already.
-        if(currentCursedObject != null)
-            return;
+        if(cursedObjectsDestroyed >= total)
+        {
+            Debug.Log("you win");
+            isOver=true;
+            winPanel.SetActive(true);
 
-        // Pick an object randomly
-        GameObject nextCursedObject = cursedObjects[Random.Range(0, cursedObjects.Count)];
-        
-        // Don't randomly choose one that has been destroyed already
-        while(destroyedCursedObjects.Contains(nextCursedObject))
-            nextCursedObject = cursedObjects[Random.Range(0, cursedObjects.Count)];
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
 
-        // Pick a spawn location randomly
-        GameObject nextSpawnLocation = cursedObjectSpawnLocations.locations[Random.Range(0, cursedObjectSpawnLocations.locations.Count)];
-        
-        // Create the object at the location
-        currentCursedObject = Instantiate(  nextCursedObject, 
-                                            nextSpawnLocation.transform.position,
-                                            nextSpawnLocation.transform.rotation, 
-                                            transform);
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
 
-        // Invoke the event
-        onCursedObjectSpawned.Invoke();
+
     }
 
-    public void DestroyCursedObject()
+    public void DestroyedRightObject()
     {
-        onCursedObjectDestroyed.Invoke();
-    }
-
-    public void ResetCursedObject()
-    {
-        // Stop it from falling or moving
-        Rigidbody currentCursedObjectRB = currentCursedObject.GetComponent<Rigidbody>();
-        currentCursedObjectRB.isKinematic = true;
-        currentCursedObjectRB.velocity = Vector3.zero;
-
-        // Put it at a spawn location
-        currentCursedObject.transform.position = cursedObjectSpawnLocations.locations[Random.Range(0, cursedObjectSpawnLocations.locations.Count)].transform.position;
-        
-        // Invoke the function
-        onCursedObjectReset.Invoke();
-    }
-
-    public void GetRandomSpawnPoint()
-    {
-
+        cursedObjectsDestroyed++;
     }
 }
