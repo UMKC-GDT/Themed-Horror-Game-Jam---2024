@@ -17,6 +17,8 @@ public class ObjectDialogue : MonoBehaviour
 
     void Start()
     {
+        if(dialoguePanel == null)
+            Debug.Log("Dialogue Panel Null on: " + gameObject.name);
         interacted = false;
         dialogueText.text = "";
         dialoguePanel.SetActive(false);
