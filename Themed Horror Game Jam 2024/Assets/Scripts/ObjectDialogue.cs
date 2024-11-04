@@ -9,7 +9,7 @@ public class ObjectDialogue : MonoBehaviour
     private int index = 0;
 
     public string[] dialogue;
-    public float wordSpeed;
+    static public float WORDSPEED = (float)0.05;
     private bool runDialogue;
     private bool interacted;
     public bool repeatDialogue;
@@ -82,7 +82,7 @@ public class ObjectDialogue : MonoBehaviour
         foreach (char letter in dialogue[index].ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
+            yield return new WaitForSeconds(WORDSPEED);
         }
     }
 
