@@ -55482,7 +55482,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000013162252494, guid: cca0faf8c0b2df24d8a7c55bf6a54e0f, type: 3}
+    - {fileID: 114000011804433270, guid: cca0faf8c0b2df24d8a7c55bf6a54e0f, type: 3}
+    - {fileID: 95000011105672242, guid: cca0faf8c0b2df24d8a7c55bf6a54e0f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -59075,8 +59078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59558,8 +59561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue:
   - Write Here. Make Sure to leave an empty element after the last dialogue line.
   - 
@@ -59613,7 +59616,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: -2.35, y: 1.43, z: 1.94}
+  m_Size: {x: 2.35, y: 1.43, z: 1.94}
   m_Center: {x: 0, y: 0.040475626, z: 0}
 --- !u!33 &7272498218861769402
 MeshFilter:
@@ -59677,8 +59680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59729,8 +59732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59837,8 +59840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59897,8 +59900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59929,8 +59932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
@@ -59989,8 +59992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1261599627}
+  dialogueText: {fileID: 1261599626}
   dialogue: []
   repeatDialogue: 0
   colliderTrigger: 0
