@@ -37,6 +37,8 @@ public class PhotobookMenu : MonoBehaviour
     private GUIStyle guiStyle;
     private string msg;
 
+    private AudioSource audio;
+
 
     GameObject CreatePhoto(GameObject page, int pageNum){
         GameObject photo = Instantiate(photoPrefab, page.transform);
@@ -113,8 +115,16 @@ public class PhotobookMenu : MonoBehaviour
         }
         
         if (Direction == "Left" && pageSet != 1){
+            if (audio != null)
+            {
+                audio.Play();
+            }
             pageSet--;
         } else if (Direction == "Right" && pageSet != totalSets){
+            if (audio != null)
+            {
+                audio.Play();
+            }
             pageSet++;
         }
 
@@ -147,6 +157,7 @@ public class PhotobookMenu : MonoBehaviour
     void Start()
     {
         setupGui();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -165,9 +176,10 @@ public class PhotobookMenu : MonoBehaviour
 
 
             if (Input.GetKeyDown(flipLeft) || pageFlipDirection == "Left"){
-  
+                
                 PageFlip("Left");
             } else if (Input.GetKeyDown(flipRight) || pageFlipDirection == "Right"){
+               
                 PageFlip("Right");
             }
             pageFlipDirection = "None";
