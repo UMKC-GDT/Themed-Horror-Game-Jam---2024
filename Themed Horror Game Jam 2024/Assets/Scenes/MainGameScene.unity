@@ -34055,7 +34055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4346679456478275809, guid: 81446e43015b5c849a29e80985326c16, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5247708708996572686, guid: 81446e43015b5c849a29e80985326c16, type: 3}
       propertyPath: m_AnchorMax.x
@@ -41263,6 +41263,8 @@ MonoBehaviour:
   photobookMenuUI: {fileID: 1958000451}
   buttonLeft: {fileID: 1686586606}
   buttonRight: {fileID: 901265242}
+  movement: {fileID: 1245586136}
+  cam: {fileID: 1812273532}
 --- !u!1 &1625567433
 GameObject:
   m_ObjectHideFlags: 0
@@ -46154,6 +46156,7 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 1843399455}
+  isFrozen: 0
 --- !u!81 &1812273533
 AudioListener:
   m_ObjectHideFlags: 0
@@ -53908,7 +53911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1958000452
 RectTransform:
   m_ObjectHideFlags: 0

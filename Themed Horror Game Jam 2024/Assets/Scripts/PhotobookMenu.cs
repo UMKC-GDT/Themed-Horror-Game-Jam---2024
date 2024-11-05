@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
+using Unity.VisualScripting.Antlr3.Runtime;
+//using UnityEngine.UIElements;
 
 public class PhotobookMenu : MonoBehaviour
 {
@@ -30,6 +32,10 @@ public class PhotobookMenu : MonoBehaviour
     public static float photoHeight = 250;
 
     public PlayerMovement movement;
+    public PlayerCam cam;
+
+    private GUIStyle guiStyle;
+    private string msg;
 
 
     GameObject CreatePhoto(GameObject page, int pageNum){
@@ -124,14 +130,23 @@ public class PhotobookMenu : MonoBehaviour
     void ClosePhotobook(){
         photobookMenuUI.SetActive(false);
         movement.isFrozen = false;
+        cam.isFrozen = false;
+        msg = getGuiMsg(false);
     }
 
     void OpenPhotobook(){
         photobookMenuUI.SetActive(true);
         movement.isFrozen = true;
+        cam.isFrozen = true;
+        msg = getGuiMsg(true);
         // photosCollected.Add("Photo_1"); // Debug
         // photosCollected.Add("Photo_3"); // Debug
         PageFlip("None");
+    }
+
+    void Start()
+    {
+        setupGui();
     }
 
     void Update()
@@ -178,6 +193,37 @@ public class PhotobookMenu : MonoBehaviour
         pageRectTransform.name = "Page_" + (pageNum);
 
         return Page;
+    }
+
+
+
+    private void setupGui()
+    {
+        guiStyle = new GUIStyle();
+        guiStyle.fontSize = 16;
+        guiStyle.fontStyle = FontStyle.Bold;
+        guiStyle.normal.textColor = Color.white;
+        msg = "Press Tab to Open the Photo Album";
+    }
+
+    private string getGuiMsg(bool isOpen)
+    {
+        string rtnVal;
+        if (isOpen)
+        {
+            rtnVal = "Press Tab to Close the Photo Album"; 
+        }
+        else
+        {
+            rtnVal = "Press Tab to Open the Photo Album";
+        }
+        return rtnVal;
+    }
+
+    void OnGUI()
+    {
+         GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
+        
     }
 }
 

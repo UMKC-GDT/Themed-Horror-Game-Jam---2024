@@ -106,7 +106,7 @@ public class PickUpObject : MonoBehaviour
     {
         if (hasItem || canpickup)  //show on-screen prompts to user for guide.
         {
-            GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
+            GUI.Label(new Rect(50, Screen.height - 50, 200, 50), msg, guiStyle);
         }
     }
 }
