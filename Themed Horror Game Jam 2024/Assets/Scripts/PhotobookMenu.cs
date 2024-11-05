@@ -15,7 +15,7 @@ public class PhotobookMenu : MonoBehaviour
     public GameObject photobookMenuUI;
     public GameObject buttonLeft;
     public GameObject buttonRight;
-    public static List<string> photosCollected = new List<string> ();
+    //public static List<string> photosCollected = new List<string> ();
     private static int pageNum;
     public static int totalPages = 5;
     public static int pagesPerSet = 2;
@@ -29,7 +29,10 @@ public class PhotobookMenu : MonoBehaviour
     public static float photoWidth = 250;
     public static float photoHeight = 250;
 
-    void CreatePhoto(GameObject page, int pageNum){
+    public PlayerMovement movement;
+
+
+    GameObject CreatePhoto(GameObject page, int pageNum){
         GameObject photo = Instantiate(photoPrefab, page.transform);
 
         RectTransform photoRectTransform = photo.GetComponent<RectTransform>();
@@ -37,6 +40,16 @@ public class PhotobookMenu : MonoBehaviour
         photoRectTransform.anchoredPosition = new Vector2(0, 0);
         photoRectTransform.sizeDelta = new Vector2(photoWidth, photoHeight);
         photoRectTransform.name = "Photo_" + (pageNum);
+
+        Image polariod = photo.GetComponent<Image>();
+        
+
+        polariod.sprite = Resources.Load<Sprite>("Polaroids/"+ "Photo_" + (pageNum));
+       // Debug.Log(polariod.sprite);
+
+        return photo;
+
+
     }
 
     void CreatePageSet(GameObject Photobook, int setNum){
@@ -54,14 +67,22 @@ public class PhotobookMenu : MonoBehaviour
 
             if(Photobook.transform.Find(pageName) == null){
                 Page = CreatePage(Photobook, pageNum);
+    
             } else {
-                Page = GameObject.Find("Canvas/Photobook/Pages/" + pageName);
+                Page = GameObject.Find("- GAME MANAGER/PhotobookCanvas/Panel/Pages/" + pageName);
             }
 
             Page.SetActive(true);
 
-            if (photosCollected.Contains(photoName) && Page.transform.Find(photoName) == null){
-                CreatePhoto(Page, pageNum);
+            GameObject Photo;
+
+            if (Page.transform.Find(photoName) == null)
+            {
+                Photo = CreatePhoto(Page, pageNum);
+            }
+            else
+            {
+                Photo = GameObject.Find("- GAME MANAGER/PhotobookCanvas/Panel/Pages/" + pageName + "/" + "Photo_" + pageNum);
             }
         }
     }
@@ -77,10 +98,10 @@ public class PhotobookMenu : MonoBehaviour
     }
 
     void PageFlip(string Direction){
-        GameObject Pages = GameObject.Find("Canvas/Photobook/Pages");
+        GameObject Pages = GameObject.Find("- GAME MANAGER/PhotobookCanvas/Panel/Pages");
         buttonLeft.SetActive(true);
         buttonRight.SetActive(true);
-
+        
         for (int page = 0; page < Pages.transform.childCount ; page++) {
             Pages.transform.GetChild(page).gameObject.SetActive(false);
         }
@@ -102,10 +123,12 @@ public class PhotobookMenu : MonoBehaviour
 
     void ClosePhotobook(){
         photobookMenuUI.SetActive(false);
+        movement.isFrozen = false;
     }
 
     void OpenPhotobook(){
         photobookMenuUI.SetActive(true);
+        movement.isFrozen = true;
         // photosCollected.Add("Photo_1"); // Debug
         // photosCollected.Add("Photo_3"); // Debug
         PageFlip("None");
@@ -122,7 +145,12 @@ public class PhotobookMenu : MonoBehaviour
         }
 
         if (photobookMenuUI.activeInHierarchy){
+
+       
+
+
             if (Input.GetKeyDown(flipLeft) || pageFlipDirection == "Left"){
+  
                 PageFlip("Left");
             } else if (Input.GetKeyDown(flipRight) || pageFlipDirection == "Right"){
                 PageFlip("Right");

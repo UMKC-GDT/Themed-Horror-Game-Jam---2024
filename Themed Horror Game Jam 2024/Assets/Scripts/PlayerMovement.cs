@@ -41,8 +41,11 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem loseFire;
     public GameObject loseFireLight;
 
+    public bool isFrozen;
+
     private void Start()
     {
+        isFrozen = false;
         rb = GetComponent<Rigidbody>();
 
         rb.freezeRotation = true;
@@ -52,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isFrozen)
+        {
+            return;
+        }
+
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.75f, whatIsGround);
         SpeedControl();
         MyInput();
