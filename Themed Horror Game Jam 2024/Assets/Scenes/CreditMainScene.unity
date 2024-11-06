@@ -315,7 +315,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "-Cameron Cianciolo\t\t-Temka Munkhjargal\n-Ethan Miller\t\t\t-Vincent
-    Yang\n-Mason Allaman\t\t\t\n-Sailor Usher\n-Nik Crane"
+    Yang\n-Mason Allaman\t\t\t-Trevor Norton\t\t\n-Sailor Usher\n-Nik Crane"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
