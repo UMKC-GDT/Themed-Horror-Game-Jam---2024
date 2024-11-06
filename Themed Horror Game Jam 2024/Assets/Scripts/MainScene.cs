@@ -31,7 +31,20 @@ public class MainScene : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
-    
+
+    public void OpenSettings()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void CloseSettings()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit(); // Quit Game
