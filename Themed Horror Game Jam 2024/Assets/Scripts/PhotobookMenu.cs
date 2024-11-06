@@ -31,11 +31,13 @@ public class PhotobookMenu : MonoBehaviour
     public static float photoWidth = 250;
     public static float photoHeight = 250;
 
+    public PhotobookGrabber photobookGrabber;
     public PlayerMovement movement;
     public PlayerCam cam;
 
     private GUIStyle guiStyle;
     private string msg;
+    private bool grabbed; //used to determine that the photobook has been grabbed and sets up the ui once in update() accordingly.
 
     private AudioSource audio;
 
@@ -156,13 +158,17 @@ public class PhotobookMenu : MonoBehaviour
 
     void Start()
     {
-        setupGui();
         audio = GetComponent<AudioSource>();
+        grabbed = false;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(openPhotobookKey)){
+        if (photobookGrabber.bookGrabbed && !grabbed){
+            setupGui();
+            grabbed = true;
+        }
+        if (Input.GetKeyDown(openPhotobookKey) && photobookGrabber.bookGrabbed){
             if (photobookMenuUI.activeInHierarchy){
                 ClosePhotobook();
             } else {

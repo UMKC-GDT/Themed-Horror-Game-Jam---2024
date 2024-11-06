@@ -30,7 +30,7 @@ public class PickUpObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canpickup == true && myHands.transform.childCount == 0) // if you enter thecollider of the objecct
+        if (canpickup == true && myHands.transform.childCount == 0) // if you enter the collider of the object
         {
             msg = getGuiMsg(hasItem);
             if (Input.GetKeyDown(KeyCode.Q))  // can be e or any key
@@ -53,7 +53,7 @@ public class PickUpObject : MonoBehaviour
         {
             ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = false; // make the rigidbody work again
             ObjectIwantToPickUp.GetComponent<Collider>().enabled = true;
-            ObjectIwantToPickUp.transform.parent = null; // make the object no be a child of the hands
+            ObjectIwantToPickUp.transform.parent = null; // make the object not be a child of the hands
             hasItem = false;
             msg = getGuiMsg(hasItem);
         }
