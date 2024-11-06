@@ -3228,6 +3228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1261599627}
     - target: {fileID: 9045315776941141130, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
+      propertyPath: repeatDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045315776941141130, guid: 7de7f60b844489e48a3ec59a1a33dec7, type: 3}
       propertyPath: dialogue.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -4132,6 +4136,14 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1261599627}
+    - target: {fileID: 1286950857808905820, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286950857808905820, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: I need to find a way out.
+      objectReference: {fileID: 0}
     - target: {fileID: 2231784108390513247, guid: 63e6817de1b03884b88b4d68cbd0cd8a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
@@ -40905,11 +40917,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursedObjectsDestroyed: 0
-  total: 6
+  total: 2
   isOver: 0
   winPanel: {fileID: 573108048}
   losePanel: {fileID: 278240870}
   player: {fileID: 1245586136}
+  ending: 0
 --- !u!4 &1598048423
 Transform:
   m_ObjectHideFlags: 0

@@ -11,8 +11,12 @@ public class BurnTheItems : MonoBehaviour
     public AudioSource audio;
     public GameManager game;
 
+
+    private ObjectDialogue dialogueComponent;
+
     void Start()
     {
+      
         fire = GameObject.Find("FireParticles").GetComponent<ParticleSystem>();
     }
 
@@ -20,6 +24,11 @@ public class BurnTheItems : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Burn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
+            if (other.gameObject.GetComponent<ObjectDialogue>() != null)
+            {
+                other.gameObject.GetComponent<ObjectDialogue>().RemoveText(); // I added this to run dialogue if this object has it	
+            }
+
             //Set your event or whatever you want here
             game.DestroyedRightObject();
             audio.Play();
@@ -34,6 +43,10 @@ public class BurnTheItems : MonoBehaviour
         }
         if (other.gameObject.CompareTag("NoBurn") && !other.gameObject.GetComponent<PickUpObject>().hasItem)
         {
+            if (other.gameObject.GetComponent<ObjectDialogue>() != null)
+            {
+                other.gameObject.GetComponent<ObjectDialogue>().RemoveText(); // I added this to run dialogue if this object has it	
+            }
             //Set your event or whatever you want here
             audio.Play();
             onWrongItemBurned.Invoke();
