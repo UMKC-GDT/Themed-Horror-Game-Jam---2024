@@ -59561,7 +59561,7 @@ GameObject:
   - component: {fileID: 7482579895529440578}
   m_Layer: 0
   m_Name: SpawnerCigs
-  m_TagString: NoBurn
+  m_TagString: Burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60123,7 +60123,7 @@ GameObject:
   - component: {fileID: 7332028420924069124}
   m_Layer: 0
   m_Name: SpawnerAshtray
-  m_TagString: Burn
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60186,7 +60186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1261599627}
   dialogueText: {fileID: 1261599626}
-  dialogue: []
+  dialogue:
+  - 
   repeatDialogue: 0
   colliderTrigger: 0
 --- !u!1 &4284767407069201827
@@ -60558,7 +60559,7 @@ MonoBehaviour:
   - {fileID: 976556021}
   correctItems:
   - {fileID: 325094507386384817}
-  - {fileID: 4284767407069201827}
+  - {fileID: 6523100707534869547}
   - {fileID: 2133437614481591202}
   - {fileID: 2545395271472213974}
   fillerItems:

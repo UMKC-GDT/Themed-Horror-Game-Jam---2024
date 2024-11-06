@@ -10,6 +10,7 @@ public class MainScene : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+    
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); // loads "Level_0 "
@@ -17,7 +18,11 @@ public class MainScene : MonoBehaviour
     }
     private void Update()
     {
-        CloseCredits();
+        if (Input.GetKeyUp(KeyCode.Escape)) 
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
     public void OpenCredits()
     {
@@ -26,10 +31,8 @@ public class MainScene : MonoBehaviour
 
     public void CloseCredits()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+         SceneManager.LoadScene(0);
+        
     }
 
     public void OpenSettings()
@@ -39,10 +42,8 @@ public class MainScene : MonoBehaviour
 
     public void CloseSettings()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(0);
+        
     }
 
     public void QuitGame()
