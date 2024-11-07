@@ -11075,7 +11075,7 @@ GameObject:
   - component: {fileID: 458057728}
   - component: {fileID: 458057727}
   m_Layer: 0
-  m_Name: FireParticles
+  m_Name: PlayerFireParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46696,10 +46696,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d072ab3c999b024c999f019db616d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 10
+  sensY: 10
+  snappiness: 10
+  upDownRange: 90
   orientation: {fileID: 1843399455}
-  isFrozen: 0
+  lockMouseMovement: 0
 --- !u!81 &1812273533
 AudioListener:
   m_ObjectHideFlags: 0
