@@ -142,14 +142,14 @@ public class PhotobookMenu : MonoBehaviour
     void ClosePhotobook(){
         photobookMenuUI.SetActive(false);
         movement.isFrozen = false;
-        cam.isFrozen = false;
+        cam.lockMouseMovement = false;
         msg = getGuiMsg(false);
     }
 
     void OpenPhotobook(){
         photobookMenuUI.SetActive(true);
         movement.isFrozen = true;
-        cam.isFrozen = true;
+        cam.lockMouseMovement = true;
         msg = getGuiMsg(true);
         // photosCollected.Add("Photo_1"); // Debug
         // photosCollected.Add("Photo_3"); // Debug
@@ -240,7 +240,7 @@ public class PhotobookMenu : MonoBehaviour
 
     void OnGUI()
     {
-         GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
+         //GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
         
     }
 }

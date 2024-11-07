@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
-
+    public float sensX = 2f, sensY = 2f, snappiness = 10f, upDownRange = 90f;
     public Transform orientation;
 
-    float xRotation;
-    float yRotation;
+    private float xRotation = 0f;
+    private float yRotation = 0f;
 
-    public bool isFrozen;
+    public bool lockMouseMovement;
 
     private void Start()
     {
@@ -22,19 +18,25 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        if (isFrozen)
-        {
-            return;
-        }
+        if (lockMouseMovement) return;
 
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        // Get the raw mouse input for rotation
+        float rotX = Input.GetAxis("Mouse X") * sensX;
+        float rotY = Input.GetAxis("Mouse Y") * sensY;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        // Accumulate the rotation values (smooth rotation)
+        yRotation += rotX;
+        xRotation -= rotY;
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.localEulerAngles = new Vector3(0, yRotation, 0);
+        // Clamp the vertical rotation to avoid flipping
+        xRotation = Mathf.Clamp(xRotation, -upDownRange, upDownRange);
+
+        // Smoothly interpolate between the current and desired rotation using LerpAngle
+        float smoothX = Mathf.LerpAngle(transform.localEulerAngles.y, yRotation, snappiness * Time.deltaTime);
+        float smoothY = Mathf.LerpAngle(transform.localEulerAngles.x, xRotation, snappiness * Time.deltaTime);
+
+        // Apply the smoothed rotation
+        transform.localRotation = Quaternion.Euler(smoothY, smoothX, 0);
+        orientation.localEulerAngles = new Vector3(0, smoothX, 0);
     }
 }

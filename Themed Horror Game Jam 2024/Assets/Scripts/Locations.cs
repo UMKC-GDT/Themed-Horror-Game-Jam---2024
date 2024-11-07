@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
 public class Locations : MonoBehaviour
@@ -14,8 +13,6 @@ public class Locations : MonoBehaviour
         locations.Clear();
 
         foreach(Transform child in transform)
-        {
             locations.Add(child.gameObject);
-        }
     }
 }
