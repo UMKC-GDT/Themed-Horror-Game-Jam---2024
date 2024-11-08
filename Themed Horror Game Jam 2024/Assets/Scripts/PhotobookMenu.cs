@@ -228,20 +228,14 @@ public class PhotobookMenu : MonoBehaviour
     {
         string rtnVal;
         if (isOpen)
-        {
             rtnVal = "Press Tab to Close the Photo Album"; 
-        }
         else
-        {
             rtnVal = "Press Tab to Open the Photo Album";
-        }
         return rtnVal;
     }
 
     void OnGUI()
     {
-         GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
-        
+        //GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
     }
 }
-
