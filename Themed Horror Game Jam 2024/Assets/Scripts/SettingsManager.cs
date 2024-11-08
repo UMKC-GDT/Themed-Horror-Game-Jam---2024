@@ -1,45 +1,59 @@
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
-/*
- * To set and save values, put two sliders and give this refs to them
- * To get saved values:
- *  * SettingsManager.Volume || SettingsManager.Brightness
- * Should be the same thing
- */
 public class SettingsManager : MonoBehaviour
 {
-    public Slider volumeSlider;
     public Slider brightnessSlider;
+    public Slider volumeSlider;
 
-    private const string VolumePrefKey = "Volume";
     private const string BrightnessPrefKey = "Brightness";
+    private const string VolumePrefKey = "Volume";
 
-    public static float Volume => PlayerPrefs.GetFloat(VolumePrefKey, 1.0f);
-    public static float Brightness => PlayerPrefs.GetFloat(BrightnessPrefKey, 1.0f);
+    // Static properties to access brightness and volume
+    public static float Brightness
+    {
+        get => PlayerPrefs.GetFloat(BrightnessPrefKey, 1.0f);
+        private set
+        {
+            PlayerPrefs.SetFloat(BrightnessPrefKey, value);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public static float Volume
+    {
+        get => PlayerPrefs.GetFloat(VolumePrefKey, 1.0f);
+        private set
+        {
+            PlayerPrefs.SetFloat(VolumePrefKey, value);
+            PlayerPrefs.Save();
+        }
+    }
 
     void Start()
     {
         // Load saved values or set defaults if no values exist
-        volumeSlider.value = Volume;
         brightnessSlider.value = Brightness;
+        volumeSlider.value = Volume;
+
+        // Add listeners for when the slider values are changed
+        brightnessSlider.onValueChanged.AddListener(OnBrightnessChanged);
+        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
 
-    public void OnVolumeChanged(float value)
+    private void OnBrightnessChanged(float value)
     {
-        PlayerPrefs.SetFloat(VolumePrefKey, value);
-        Debug.Log(Volume);
-        PlayerPrefs.Save();
+        Brightness = value;  // Update static property, which saves to PlayerPrefs
     }
 
-    public void OnBrightnessChanged(float value)
+    private void OnVolumeChanged(float value)
     {
-        PlayerPrefs.SetFloat(BrightnessPrefKey, value);
-        PlayerPrefs.Save();
+        Volume = value;  // Update static property, which saves to PlayerPrefs
     }
 
-    public void onDisable()
+    private void OnDisable()
     {
+        // Ensure values are saved when the object is disabled
         PlayerPrefs.Save();
     }
 }
