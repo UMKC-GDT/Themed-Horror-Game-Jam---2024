@@ -15,12 +15,13 @@ public class PickUpObject : MonoBehaviour
     private GUIStyle guiStyle;
     private string msg;
 
-
+    private AudioSource audio;
 
     private ObjectDialogue dialogueComponent;
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         dialogueComponent = GetComponent<ObjectDialogue>();
         canpickup = false;    //setting both to false
         hasItem = false;
@@ -38,6 +39,10 @@ public class PickUpObject : MonoBehaviour
                 if (dialogueComponent != null)
                 {
                     dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it
+                }
+                if (audio != null)
+                {
+                    audio.Play();
                 }
 
                 ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces

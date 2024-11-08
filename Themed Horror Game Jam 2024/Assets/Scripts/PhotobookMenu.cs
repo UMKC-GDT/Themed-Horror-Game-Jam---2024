@@ -240,7 +240,7 @@ public class PhotobookMenu : MonoBehaviour
 
     void OnGUI()
     {
-         //GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
+         GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
         
     }
 }

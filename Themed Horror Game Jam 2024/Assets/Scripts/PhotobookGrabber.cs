@@ -14,23 +14,31 @@ public class PhotobookGrabber : MonoBehaviour
     private GUIStyle guiStyle;
     private string msg;
 
+    private AudioSource audio;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        
         bookGrabbed = false;
         canpickup = false;
+        audio = GetComponent<AudioSource>();
         setupGui();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canpickup == true) // if you enter the collider of the object
+        if (canpickup == true && PhotobookPhysical.activeInHierarchy) // if you enter the collider of the object
         {
             msg = getGuiMsg(false);
             if (Input.GetKeyDown(KeyCode.Q))  // can be e or any key
             {
+                if (audio != null)
+                {
+                    audio.Play();
+                }
                 PhotobookPhysical.SetActive(false);
                 bookGrabbed = true;
                 
@@ -45,7 +53,7 @@ public class PhotobookGrabber : MonoBehaviour
         {
             Debug.Log("In Range of Photobook");
             canpickup = true;  //set the pick up bool to true
-            PhotobookPhysical = this.gameObject; //set the gameobject you collided with to one you can reference
+            PhotobookPhysical = this.gameObject.transform.GetChild(0).gameObject; ; //set the gameobject you collided with to one you can reference
         }
     }
     void OnTriggerExit(Collider other)
