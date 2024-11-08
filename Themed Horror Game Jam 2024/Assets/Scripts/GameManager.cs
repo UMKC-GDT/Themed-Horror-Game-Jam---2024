@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
         isOver = false;
         winPanel.SetActive(false);
         losePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
