@@ -25,19 +25,20 @@ public class SettingsManager : MonoBehaviour
         brightnessSlider.value = Brightness;
     }
 
-    private void OnVolumeChanged(float value)
+    public void OnVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat(VolumePrefKey, value);
+        Debug.Log(Volume);
         PlayerPrefs.Save();
     }
 
-    private void OnBrightnessChanged(float value)
+    public void OnBrightnessChanged(float value)
     {
         PlayerPrefs.SetFloat(BrightnessPrefKey, value);
         PlayerPrefs.Save();
     }
 
-    private void OnDisable()
+    public void onDisable()
     {
         PlayerPrefs.Save();
     }
