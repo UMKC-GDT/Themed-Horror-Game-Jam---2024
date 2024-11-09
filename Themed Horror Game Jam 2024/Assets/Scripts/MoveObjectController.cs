@@ -19,15 +19,19 @@ public class MoveObjectController : MonoBehaviour
 	private string msg;
 
 	private int rayLayerMask;
-	private ObjectDialogue dialogueComponent;
+	
+	
+    private DialogueData objectData;
 
-	private  AudioSource audio;
+    private AudioSource audio;
 
 
     void Start()
 	{
 		audio = GetComponent<AudioSource>();
-		dialogueComponent = GetComponent<ObjectDialogue>();
+        objectData = GetComponent<DialogueData>();
+
+
         //Initialize moveDrawController if script is enabled.
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -87,9 +91,10 @@ public class MoveObjectController : MonoBehaviour
 	
 			if (Input.GetKeyUp(KeyCode.E))	
 			{		
-				if (dialogueComponent != null)		
-				{      
-					dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it	
+				if ( objectData != null)		
+				{
+					
+                    DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
 				}
 				
 				if (!doorLocked)

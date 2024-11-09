@@ -4,62 +4,75 @@ using TMPro;
 
 public class ObjectDialogue : MonoBehaviour
 {
-    public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
-    private int index = 0;
+    public GameObject dialoguePanel; //the panel the text will display on
+    public TextMeshProUGUI dialogueText; // the text that will display
+    
+    private int index = 0; //index of dilogue array
+    public string[] dialogue; 
 
-    public string[] dialogue;
     static public float WORDSPEED = (float)0.05;
-    private bool runDialogue;
-    private bool interacted;
-    public bool repeatDialogue;
-    public bool colliderTrigger;
+    
+    
+    private bool runDialogue; //if dilogue should run
+    private bool interacted; //if dialogue has alread ran
+    public bool interupted; //if dialogue is interupted by another objects dialogue call 
+
+    public bool repeatDialogue; //if this dialogue should repeat
+    public bool colliderTrigger; //if this dialogue should trigger when collided with 
+
 
     void Start()
     {
-        if(dialoguePanel == null)
-            Debug.Log("Dialogue Panel Null on: " + gameObject.name);
+        interacted = false; 
         interacted = false;
+
         dialogueText.text = "";
         dialoguePanel.SetActive(false);
     }
-
+    
     void Update()
     {
+
         if (runDialogue == false)
             return;
+        
 
-        if (interacted)
+        if (interacted) // dont run again if its already been run
         {
             RemoveText();
+            return;
         }
-        else
-        {
-            if(!dialoguePanel.activeInHierarchy)
-            {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
 
-            if (Input.GetMouseButtonDown(0))
+       
+            
+        if(!dialoguePanel.activeInHierarchy) //if dialogue panel is not open, open it and start typing 
+        {
+            dialoguePanel.SetActive(true);
+            StartCoroutine(Typing());
+        }
+            
+
+        if (Input.GetMouseButtonDown(0)) //if input interupts dialogue 
+        {
+            if (dialogueText.text == dialogue[index])
             {
-                if (dialogueText.text == dialogue[index])
-                {
-                    NextLine();
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    dialogueText.text = dialogue[index];
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                dialogueText.text = dialogue[index];
                     
-                }
             }
         }
-        if (index >= dialogue.Length -1 && dialoguePanel.activeInHierarchy)
+
+        
+
+        if (index >= dialogue.Length -1 && dialoguePanel.activeInHierarchy)  // if the dialogye is over 
         {
             //if this is a peice of dialogue that should be repeated then interact will remain false 
             interacted = !repeatDialogue;
-            index = 0;
+            //index = 0;
             RemoveText();
         }
     }
@@ -67,11 +80,18 @@ public class ObjectDialogue : MonoBehaviour
     //this gets called in the move object controller script
     public void RunDialogue()
     {
+        if (dialoguePanel.activeInHierarchy)
+        {
+            interupted = true;
+        }
+        
         runDialogue = true;
     }
 
     public void RemoveText()
     {
+        Debug.Log("Remove:" + dialogueText.text + ", index: " + index);
+        //StopAllCoroutines();
         runDialogue = false;
         dialogueText.text = "";
         dialoguePanel.SetActive(false);
@@ -89,7 +109,7 @@ public class ObjectDialogue : MonoBehaviour
 
     public void NextLine()
     {
-        if (index < dialogue.Length - 1)
+        if (index < dialogue.Length - 1 )
         {
             index++;
             dialogueText.text = "";
@@ -106,7 +126,7 @@ public class ObjectDialogue : MonoBehaviour
     {
         if (other.CompareTag("Player") && colliderTrigger)
         {
-            runDialogue = true;
+            RunDialogue();
         }
     }
 
@@ -117,9 +137,9 @@ public class ObjectDialogue : MonoBehaviour
             runDialogue = false;
 
             interacted = !repeatDialogue;
-            index = 0;
 
             RemoveText();
+            colliderTrigger = repeatDialogue;
         }
     }
 }

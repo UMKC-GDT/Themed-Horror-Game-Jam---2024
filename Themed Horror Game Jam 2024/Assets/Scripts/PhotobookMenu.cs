@@ -40,6 +40,7 @@ public class PhotobookMenu : MonoBehaviour
     private bool grabbed; //used to determine that the photobook has been grabbed and sets up the ui once in update() accordingly.
 
     private AudioSource audio;
+    private DialogueData objectData;
 
 
     GameObject CreatePhoto(GameObject page, int pageNum){
@@ -154,12 +155,19 @@ public class PhotobookMenu : MonoBehaviour
         // photosCollected.Add("Photo_1"); // Debug
         // photosCollected.Add("Photo_3"); // Debug
         PageFlip("None");
+
+        if (objectData != null)
+        {
+            DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
+        }
     }
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        objectData = GetComponent<DialogueData>();
         grabbed = false;
+        setupGui();
     }
 
     void Update()
@@ -236,6 +244,6 @@ public class PhotobookMenu : MonoBehaviour
 
     void OnGUI()
     {
-        //GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
+        GUI.Label(new Rect(50, Screen.height - 30, 200, 50), msg, guiStyle);
     }
 }

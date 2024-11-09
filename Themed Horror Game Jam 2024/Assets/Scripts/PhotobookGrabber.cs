@@ -15,6 +15,7 @@ public class PhotobookGrabber : MonoBehaviour
     private string msg;
 
     private AudioSource audio;
+    private DialogueData objectData;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class PhotobookGrabber : MonoBehaviour
         bookGrabbed = false;
         canpickup = false;
         audio = GetComponent<AudioSource>();
+        objectData = GetComponent<DialogueData>();
         setupGui();
     }
 
@@ -39,6 +41,10 @@ public class PhotobookGrabber : MonoBehaviour
                 {
                     audio.Play();
                 }
+                if (objectData != null)
+                {
+                    DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
+                }
                 PhotobookPhysical.SetActive(false);
                 bookGrabbed = true;
                 
@@ -51,7 +57,7 @@ public class PhotobookGrabber : MonoBehaviour
     {
         if (other.CompareTag("Player")) //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            Debug.Log("In Range of Photobook");
+            //Debug.Log("In Range of Photobook");
             canpickup = true;  //set the pick up bool to true
             PhotobookPhysical = this.gameObject.transform.GetChild(0).gameObject; ; //set the gameobject you collided with to one you can reference
         }

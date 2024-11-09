@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,12 +18,12 @@ public class PickUpObject : MonoBehaviour
 
     private AudioSource audio;
 
-    private ObjectDialogue dialogueComponent;
+    private DialogueData objectData;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        dialogueComponent = GetComponent<ObjectDialogue>();
+        objectData = GetComponent<DialogueData>();
         canpickup = false;    //setting both to false
         hasItem = false;
         setupGui();
@@ -36,9 +37,9 @@ public class PickUpObject : MonoBehaviour
             msg = getGuiMsg(hasItem);
             if (Input.GetKeyDown(KeyCode.Q))  // can be e or any key
             {
-                if (dialogueComponent != null)
+                if (objectData != null)
                 {
-                    dialogueComponent.RunDialogue(); // I added this to run dialogue if this object has it
+                    DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
                 }
                 if (audio != null)
                 {
