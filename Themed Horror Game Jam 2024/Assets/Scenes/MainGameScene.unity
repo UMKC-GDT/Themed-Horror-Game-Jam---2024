@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.39
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28380433, g: 0.31746623, b: 0.37042648, a: 0.39}
+  m_IndirectSpecularColor: {r: 0.28380483, g: 0.31746668, b: 0.3704271, a: 0.39}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36107,6 +36107,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cf3d52b3b76bf4c4ebf9164c88c1b585, type: 2}
+    - target: {fileID: 3318108, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8024527565041327848, guid: a2de27466c2c1374da56f03f08b69642, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 124016, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
@@ -36183,8 +36187,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4872866, y: 1.0233734, z: 2.0187845}
-  m_Center: {x: 0.028974056, y: 0.5016867, z: -0.24147558}
+  m_Size: {x: 2.4872866, y: 2.0081415, z: 2.0187845}
+  m_Center: {x: 0.028974056, y: 0.009302616, z: -0.24147558}
 --- !u!65 &1331698145
 BoxCollider:
   m_ObjectHideFlags: 0
