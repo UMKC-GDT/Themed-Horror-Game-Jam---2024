@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class PhotobookGrabber : MonoBehaviour
 {
-    public GameObject PhotobookOverlay; //reference to the photobook prefab
+    public PhotobookMenu PhotobookOverlay; //reference to the photobook prefab
     bool canpickup; //a bool to see if you can or cant pick up the photobook
     GameObject PhotobookPhysical; // the gameobject onwhich you collided with
     public bool bookGrabbed;
@@ -49,6 +49,7 @@ public class PhotobookGrabber : MonoBehaviour
                 bookGrabbed = true;
                 
                 msg = getGuiMsg(true);
+                PhotobookOverlay.OpenPhotobook();
             }
         }
     }

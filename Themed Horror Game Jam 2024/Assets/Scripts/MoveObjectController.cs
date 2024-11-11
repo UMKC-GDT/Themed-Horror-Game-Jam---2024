@@ -22,18 +22,19 @@ public class MoveObjectController : MonoBehaviour
 	
 	
     private DialogueData objectData;
+	private int dialogueRunCount;
 
-    private AudioSource audio;
+	private AudioSource audio;
 
 
     void Start()
 	{
 		audio = GetComponent<AudioSource>();
         objectData = GetComponent<DialogueData>();
+		dialogueRunCount = 0;
 
-
-        //Initialize moveDrawController if script is enabled.
-        player = GameObject.FindGameObjectWithTag("Player");
+		//Initialize moveDrawController if script is enabled.
+		player = GameObject.FindGameObjectWithTag("Player");
 
 		fpsCam = Camera.main;
 		if (fpsCam == null)	//a reference to Camera is required for rayasts
@@ -52,6 +53,7 @@ public class MoveObjectController : MonoBehaviour
 		//setup GUI style settings for user prompts
 		setupGui();
 
+
 	}
 		
 	void OnTriggerEnter(Collider other)
@@ -69,7 +71,8 @@ public class MoveObjectController : MonoBehaviour
 		{			
 			playerEntered = false;
 			//hide interact message as player may not have been looking at object when they left
-			showInteractMsg = false;		
+			showInteractMsg = false;
+			
 		}
 	}
 
@@ -90,13 +93,18 @@ public class MoveObjectController : MonoBehaviour
 			msg = getGuiMsg(isOpen);
 	
 			if (Input.GetKeyUp(KeyCode.E))	
-			{		
-				if ( objectData != null)		
+			{
+				if (objectData != null)
 				{
-					
-                    DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
+					if (objectData.dialogue.repeatDialogue || dialogueRunCount == 0)
+					{
+						DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it
+						dialogueRunCount++;
+
+					}
+
 				}
-				
+
 				if (!doorLocked)
 				{
 					if (audio != null)

@@ -28,12 +28,15 @@ public class DialogueManager : MonoBehaviour
     private bool interupted;
 
     private string currentObjectName;
+    private int listIndex;
+
 
     // Start is called before the first frame update
     void Start()
     {
        index = 0;
        timePassed = 0.0f;
+        listIndex = -1;
         currentObjectName = "";
         interupted = false;
     }
@@ -41,17 +44,12 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialogueObjects.Count == 0)
+        if(DialogueObjects.Count > 0)
         {
-            Debug.Log("size: " + DialogueObjects.Count);
-
-        }
-        else if(DialogueObjects.Count > 0)
-        {
-            if (runDialogue == false)
+            if (!runDialogue)
                 return;
 
-            Debug.Log("size: " + DialogueObjects.Count);
+            //Debug.Log("size: " + DialogueObjects.Count);
 
 
             
@@ -68,7 +66,11 @@ public class DialogueManager : MonoBehaviour
                 for (int i = 0; i < DialogueObjects.Count; i++)
                 {
                     if (DialogueObjects[i].name == currentObjectName)
+                    {
                         currentDialogue = DialogueObjects[i];
+                        listIndex = i;
+
+                    }
                 }
 
                 dialoguePanel.SetActive(true);
@@ -93,7 +95,7 @@ public class DialogueManager : MonoBehaviour
             //if duration
             if (dialogueText.text == currentDialogue.dialogueLines[index])
             {
-                if(timePassed < DialogueObjects[0].durationToEnd)
+                if(timePassed < currentDialogue.durationToEnd)
                     timePassed = timePassed + 0.01f;
                 else
                 {
@@ -110,18 +112,14 @@ public class DialogueManager : MonoBehaviour
 
                 //if this is a peice of dialogue that should be repeated then interact will remain false 
                 //interacted = !repeatDialogue;
-
+                
                 RemoveText();
                // DialogueObjects.RemoveAt(0);
                 
             }
 
         }
-        else if(DialogueObjects.Count > 1)
-        {
-            Debug.Log("size: " + DialogueObjects.Count);
-
-        }
+        
     }
 
     public void RunDialogue(Data data)
@@ -132,7 +130,7 @@ public class DialogueManager : MonoBehaviour
             DialogueObjects.Add(data);
 
         currentObjectName = data.name;
-        Debug.Log(currentObjectName);
+
 
         runDialogue = true;
 
@@ -150,6 +148,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         dialoguePanel.SetActive(false);
     }
+
+    
 
     IEnumerator Typing()
     {

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2.07
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.39
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28380483, g: 0.31746668, b: 0.3704271, a: 0.39}
+  m_IndirectSpecularColor: {r: 0.28380433, g: 0.31746623, b: 0.37042648, a: 0.39}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: WarBook
     dialogueLines:
     - Grandpa's old war novel...
     - ' The Curse has latched onto it.'
@@ -3392,6 +3392,7 @@ MonoBehaviour:
     durationToEnd: 1
     repeatDialogue: 0
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!1001 &139092604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5244,6 +5245,7 @@ MonoBehaviour:
     durationToEnd: 1.5
     repeatDialogue: 1
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!65 &176723793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24448,6 +24450,200 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4d3b1580308241d2a1d9ee2b9445a2b, type: 3}
+--- !u!1001 &817656435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2219658358073557485}
+    m_Modifications:
+    - target: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_Name
+      value: Radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_TagString
+      value: Burn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817656442}
+    - targetCorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817656441}
+    - targetCorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817656440}
+    - targetCorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817656439}
+    - targetCorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817656438}
+  m_SourcePrefab: {fileID: 100100000, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+--- !u!4 &817656436 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1105368987106594050, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+  m_PrefabInstance: {fileID: 817656435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &817656437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691248719961883559, guid: 0d4cbecbea09159448df1c3fc69043cd, type: 3}
+  m_PrefabInstance: {fileID: 817656435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &817656438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817656437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9aa3a53166867f4c834a3c325158024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Radio
+    dialogueLines:
+    - Grandpa's radio..
+    - He always took it so personal whenever OceanHarvest was in the news. that afternoon.
+    - He still ended up going to work that afternoon.
+    - 
+    wordSpeed: 0.05
+    durationToEnd: 1
+    repeatDialogue: 0
+    isColliderDialogue: 0
+  manager: {fileID: 2142416560}
+--- !u!65 &817656439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817656437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3435116, y: 0.95290947, z: 1.699441}
+  m_Center: {x: -0.14317894, y: 0.47645473, z: -0.11812925}
+--- !u!65 &817656440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817656437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14192963, y: 0.4049389, z: 0.4645958}
+  m_Center: {x: -0.0032539368, y: 0.20246945, z: -0.13217354}
+--- !u!54 &817656441
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817656437}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &817656442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817656437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d93b421041b39949a8024fb3d380096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHands: {fileID: 378967742}
+  canpickup: 0
+  hasItem: 0
 --- !u!1001 &817665785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26269,6 +26465,7 @@ MonoBehaviour:
     durationToEnd: 1
     repeatDialogue: 1
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!1001 &894799263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35842,6 +36039,215 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1331698140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2219658358073557485}
+    m_Modifications:
+    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Name
+      value: EmployeePin
+      objectReference: {fileID: 0}
+    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_TagString
+      value: Burn
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333720, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333720, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8b152d8d26ddd409a7f43dc2a84c9f, type: 2}
+    - target: {fileID: 2333720, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf3d52b3b76bf4c4ebf9164c88c1b585, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 124016, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331698147}
+    - targetCorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331698146}
+    - targetCorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331698145}
+    - targetCorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331698144}
+    - targetCorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331698143}
+  m_SourcePrefab: {fileID: 100100000, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+--- !u!4 &1331698141 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+  m_PrefabInstance: {fileID: 1331698140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1331698142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+  m_PrefabInstance: {fileID: 1331698140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1331698143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331698142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9aa3a53166867f4c834a3c325158024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: EmployeePin
+    dialogueLines:
+    - Grandpa's employee of the month pin..
+    - I think it was the hardest I saw him smile when he earned it.
+    - "In person, he was always apologizing for missed promises, making more he wouldn\u2019t
+      stick to."
+    - "I didn\u2019t count on him to stick to them anymore, after so long."
+    - 
+    wordSpeed: 0.05
+    durationToEnd: 1
+    repeatDialogue: 0
+    isColliderDialogue: 0
+  manager: {fileID: 2142416560}
+--- !u!65 &1331698144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331698142}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4872866, y: 1.0233734, z: 2.0187845}
+  m_Center: {x: 0.028974056, y: 0.5016867, z: -0.24147558}
+--- !u!65 &1331698145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331698142}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1596463, y: 0.02, z: 0.16114175}
+  m_Center: {x: 0, y: 0, z: -0.00016146898}
+--- !u!54 &1331698146
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331698142}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1331698147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331698142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d93b421041b39949a8024fb3d380096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHands: {fileID: 378967742}
+  canpickup: 0
+  hasItem: 0
 --- !u!4 &1333780554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1807219067641453820, guid: 6fc2c36adfb1d40bbb3e4933590f100a, type: 3}
@@ -38828,7 +39234,7 @@ PrefabInstance:
       addedObject: {fileID: 1479991744}
     - targetCorrespondingSourceObject: {fileID: 7977034393512456397, guid: f44eede9952604441a227b98b74e61a0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1479991743}
+      addedObject: {fileID: 1479991750}
   m_SourcePrefab: {fileID: 100100000, guid: f44eede9952604441a227b98b74e61a0, type: 3}
 --- !u!4 &1479991741 stripped
 Transform:
@@ -38840,28 +39246,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7977034393512456397, guid: f44eede9952604441a227b98b74e61a0, type: 3}
   m_PrefabInstance: {fileID: 1479991740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1479991743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479991742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1261599627}
-  dialogueText: {fileID: 1261599626}
-  dialogue:
-  - He was trying to show me the camera he bought.
-  - He never helped me with it again, though.
-  - Pretty sure I got to use it more than he ever did.
-  - 
-  interupted: 0
-  repeatDialogue: 0
-  colliderTrigger: 0
 --- !u!65 &1479991744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38881,8 +39265,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8807707, y: 0.3141654, z: 1.9869652}
-  m_Center: {x: 0.006820202, y: 0.1570827, z: -0.079229355}
+  m_Size: {x: 2.6076307, y: 1.066062, z: 2.9112587}
+  m_Center: {x: -0.112235546, y: 0.533031, z: -0.050712585}
 --- !u!65 &1479991745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38946,6 +39330,30 @@ MonoBehaviour:
   myHands: {fileID: 378967742}
   canpickup: 0
   hasItem: 0
+--- !u!114 &1479991750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479991742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9aa3a53166867f4c834a3c325158024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Camera
+    dialogueLines:
+    - He was trying to show me the camera he bought.
+    - He never helped me with it again, though.
+    - Pretty sure I got to use it more than he ever did.
+    - 
+    wordSpeed: 0.05
+    durationToEnd: 1
+    repeatDialogue: 0
+    isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!1001 &1481112611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39036,8 +39444,9 @@ MonoBehaviour:
     - 
     wordSpeed: 0.05
     durationToEnd: 1.5
-    repeatDialogue: 0
+    repeatDialogue: 1
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!4 &1482905347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 986062799590499315, guid: 43b4f5c442e6a46149e4145239f250cc, type: 3}
@@ -42269,13 +42678,15 @@ MonoBehaviour:
   dialogue:
     name: 
     dialogueLines:
-    - Wait.. something is wrong with these photos
+    - The family photo album..
+    - Wait. Something is wrong with these photos
     - ' I need to find these objects. '
     - 
     wordSpeed: 0.05
     durationToEnd: 1
     repeatDialogue: 0
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!1 &1625567433
 GameObject:
   m_ObjectHideFlags: 0
@@ -52289,7 +52700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Start
     dialogueLines:
     - I barely escaped from that creature... I have to purge this land of it's curse!
     - I have to burn all the cursed artifiacts... I think Grandpa's book is downstairs.
@@ -52299,6 +52710,7 @@ MonoBehaviour:
     durationToEnd: 1
     repeatDialogue: 0
     isColliderDialogue: 1
+  manager: {fileID: 2142416560}
 --- !u!1001 &1828592981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55301,7 +55713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd46acc97c6eb34da9a615c35d18408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhotobookOverlay: {fileID: 1625307325}
+  PhotobookOverlay: {fileID: 1625307330}
   bookGrabbed: 0
 --- !u!65 &1968918149
 BoxCollider:
@@ -55439,8 +55851,9 @@ MonoBehaviour:
     - 
     wordSpeed: 0.05
     durationToEnd: 2
-    repeatDialogue: 0
+    repeatDialogue: 1
     isColliderDialogue: 0
+  manager: {fileID: 0}
 --- !u!1001 &1971160698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59766,10 +60179,9 @@ GameObject:
   - component: {fileID: 3671834917553896995}
   - component: {fileID: 4199209964008844331}
   - component: {fileID: 2753563060786448139}
-  - component: {fileID: 4199209964008844332}
   m_Layer: 0
   m_Name: SpawnerSpichki
-  m_TagString: Burn
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60255,6 +60667,8 @@ Transform:
   - {fileID: 8572444207258616471}
   - {fileID: 526846003179963412}
   - {fileID: 1479991741}
+  - {fileID: 1331698141}
+  - {fileID: 817656436}
   m_Father: {fileID: 2731270028562170745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2237398228719860263
@@ -60815,30 +61229,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.13958703, y: 0.05850954, z: 0.21297456}
   m_Center: {x: 0, y: 0.02925477, z: 0}
---- !u!114 &4199209964008844332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325094507386384817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1261599627}
-  dialogueText: {fileID: 1261599626}
-  dialogue:
-  - (Pretend this is an employee of the month pin)
-  - 'I think this was the hardest I saw him smile.  '
-  - "In person, he was always apologizing for missed promises, making more he wouldn\u2019t
-    stick to."
-  - "I didn\u2019t count on him to stick to them anymore, after so long."
-  - 
-  interupted: 0
-  repeatDialogue: 0
-  colliderTrigger: 0
 --- !u!1 &4284767407069201827
 GameObject:
   m_ObjectHideFlags: 0
@@ -61206,16 +61596,18 @@ MonoBehaviour:
   - {fileID: 947738664}
   - {fileID: 976556021}
   correctItems:
-  - {fileID: 325094507386384817}
-  - {fileID: 6523100707534869547}
-  - {fileID: 2133437614481591202}
   - {fileID: 2545395271472213974}
   - {fileID: 1479991742}
+  - {fileID: 1331698142}
+  - {fileID: 817656437}
+  - {fileID: 2133437614481591202}
   fillerItems:
+  - {fileID: 325094507386384817}
+  - {fileID: 4044325141638924387}
+  - {fileID: 6523100707534869547}
+  - {fileID: 4117706944319632610}
   - {fileID: 2216872451285317979}
   - {fileID: 4284767407069201827}
-  - {fileID: 4117706944319632610}
-  - {fileID: 4044325141638924387}
 --- !u!1 &6150895204564672777
 GameObject:
   m_ObjectHideFlags: 0
@@ -61247,10 +61639,9 @@ GameObject:
   - component: {fileID: 1298915528509308609}
   - component: {fileID: 5139639406351510594}
   - component: {fileID: 5074734422778976925}
-  - component: {fileID: 8193815049251702901}
   m_Layer: 0
   m_Name: SpawnerBook
-  m_TagString: Burn
+  m_TagString: NoBurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61318,17 +61709,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Vase
     dialogueLines:
-    - (this supposed to be a broken vase)
-    - "I don\u2019t think they meant to take this one."
-    - " It must\u2019ve hit the button while it fell during..."
-    - "well, it wasn\u2019t a clean divorce"
+    - "I don\u2019t think they meant to break this, it fell during..."
+    - "Well, it wasn\u2019t a clean divorce."
     - 
     wordSpeed: 0.05
     durationToEnd: 1
     repeatDialogue: 0
     isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!65 &7185672331879521601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61473,21 +61863,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133437614481591202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
+  m_Script: {fileID: 11500000, guid: a9aa3a53166867f4c834a3c325158024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1261599627}
-  dialogueText: {fileID: 1261599626}
   dialogue:
-  - (Pretend this is a birthday card)
-  - Oh, that birthday. Their argument that morning woke me up.
-  - "I never heard Mom get as loud as when she found out he didn\u2019t take off
-    for my birthday, and couldn\u2019t even sign the card. "
-  - "At least he paid for dinner, even if he couldn\u2019t be there."
-  - 
-  interupted: 0
-  repeatDialogue: 0
-  colliderTrigger: 0
+    name: Birthday
+    dialogueLines:
+    - (Pretend this is a birthday card)
+    - Oh, that birthday. Their argument that morning woke me up.
+    - "I never heard Mom get as loud as when she found out he didn\u2019t take off
+      for my birthday, and couldn\u2019t even sign the card. "
+    - "At least he paid for dinner, even if he couldn\u2019t be there."
+    - 
+    wordSpeed: 0.05
+    durationToEnd: 1
+    repeatDialogue: 0
+    isColliderDialogue: 0
+  manager: {fileID: 2142416560}
 --- !u!1 &7801098255081018919
 GameObject:
   m_ObjectHideFlags: 0
@@ -61579,31 +61971,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8193815049251702901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6523100707534869547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5606c8d50937f24d9002faa93dd13cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1261599627}
-  dialogueText: {fileID: 1261599626}
-  dialogue:
-  - (Pretend this is a news paper)
-  - Oh, this one.
-  - "I didn\u2019t even expect him to be home, and I was trying to tell him about
-    going to homecoming with my boyfriend."
-  - He always took it so personal whenever OceanHarvest was in the news. He still
-    ended up going to work that afternoon.
-  - 
-  interupted: 0
-  repeatDialogue: 0
-  colliderTrigger: 0
 --- !u!1 &8345929500361550345
 GameObject:
   m_ObjectHideFlags: 0

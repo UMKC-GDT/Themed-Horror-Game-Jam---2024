@@ -19,6 +19,7 @@ public class PickUpObject : MonoBehaviour
     private AudioSource audio;
 
     private DialogueData objectData;
+    private int dialogueRunCount;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PickUpObject : MonoBehaviour
         objectData = GetComponent<DialogueData>();
         canpickup = false;    //setting both to false
         hasItem = false;
+        dialogueRunCount = 0;
         setupGui();
     }
 
@@ -37,9 +39,15 @@ public class PickUpObject : MonoBehaviour
             msg = getGuiMsg(hasItem);
             if (Input.GetKeyDown(KeyCode.Q))  // can be e or any key
             {
-                if (objectData != null)
+                if (objectData != null )
                 {
-                    DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
+                    if(objectData.dialogue.repeatDialogue || dialogueRunCount ==0)
+                    {
+                        DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it
+                        dialogueRunCount++;
+
+                    }
+                    	
                 }
                 if (audio != null)
                 {

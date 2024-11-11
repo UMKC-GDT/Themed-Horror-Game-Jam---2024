@@ -41,9 +41,11 @@ public class PhotobookMenu : MonoBehaviour
 
     private AudioSource audio;
     private DialogueData objectData;
+    private int dialogueRunCount;
 
 
-    GameObject CreatePhoto(GameObject page, int pageNum){
+    GameObject CreatePhoto(GameObject page, int pageNum)
+    {
         GameObject photo = Instantiate(photoPrefab, page.transform);
 
         RectTransform photoRectTransform = photo.GetComponent<RectTransform>();
@@ -147,7 +149,8 @@ public class PhotobookMenu : MonoBehaviour
         msg = getGuiMsg(false);
     }
 
-    void OpenPhotobook(){
+    public void OpenPhotobook()
+    {
         photobookMenuUI.SetActive(true);
         movement.isFrozen = true;
         cam.lockMouseMovement = true;
@@ -158,17 +161,26 @@ public class PhotobookMenu : MonoBehaviour
 
         if (objectData != null)
         {
-            DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it	
+            if (objectData.dialogue.repeatDialogue || dialogueRunCount == 0)
+            {
+                DialogueManager.instance.RunDialogue(objectData.dialogue); // I added this to run dialogue if this object has it
+                dialogueRunCount++;
+
+            }
+
         }
     }
-
     void Start()
     {
+
         audio = GetComponent<AudioSource>();
         objectData = GetComponent<DialogueData>();
         grabbed = false;
         setupGui();
+        dialogueRunCount = 0;
     }
+        
+   
 
     void Update()
     {
@@ -229,7 +241,7 @@ public class PhotobookMenu : MonoBehaviour
         guiStyle.fontSize = 16;
         guiStyle.fontStyle = FontStyle.Bold;
         guiStyle.normal.textColor = Color.white;
-        msg = "Press Tab to Open the Photo Album";
+        //msg = "Press Tab to Open the Photo Album";
     }
 
     private string getGuiMsg(bool isOpen)
