@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
         {
-            rb.drag = groundDrag;
+            rb.linearDamping = groundDrag;
             // Store ground normal for movement calculations
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.75f, whatIsGround))
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rb.drag = 0;
+            rb.linearDamping = 0;
         }
     }
 
@@ -119,11 +119,11 @@ public class PlayerMovement : MonoBehaviour
             if (horizontalInput == 0 && verticalInput == 0)
             {
                 // Zero out velocity if on a slope and not moving
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+                rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
             }
             else
             {
-                rb.velocity = new Vector3(projectedMoveDir.x * moveSpeed * slopeMultiplier, rb.velocity.y, projectedMoveDir.z * moveSpeed * slopeMultiplier);
+                rb.linearVelocity = new Vector3(projectedMoveDir.x * moveSpeed * slopeMultiplier, rb.linearVelocity.y, projectedMoveDir.z * moveSpeed * slopeMultiplier);
             }
         }
         else
@@ -136,18 +136,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void SpeedControl()
     {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
     }
 
     private void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         //rb.AddForce(transform.up * jumpForce, ForceMode.Impulse)
         rb.AddForce(transform.up * 1, ForceMode.Impulse);
